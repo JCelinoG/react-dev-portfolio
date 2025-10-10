@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useApp } from '../../../contexts/AppContext';
-import { Button } from '../../Button/Button';
+import { useApp } from '../../contexts/AppContext';
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
 export const Header: React.FC = () => {

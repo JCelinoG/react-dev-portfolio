@@ -84,7 +84,7 @@ languages: {
   pt: 'Idiomas',
   en: 'Languages'
 },
-contact: {
+contact2: {
   pt: 'Vamos Trabalhar Juntos',
   en: "Let's Work Together"
 },

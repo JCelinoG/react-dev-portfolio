@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import './styles/colors.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,8 +10,8 @@
   }
   
   body {
-    background-color: var(--color-bg-primary);
-    color: var(--color-text-primary);
+    background-color: white;
+    color: #0f172a; /* secondary-900 */
     transition: all 0.3s ease;
   }
 }
@@ -26,14 +24,6 @@
   .section-padding {
     @apply py-16 lg:py-24;
   }
-  
-  .btn-primary {
-    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200;
-  }
-  
-  .btn-secondary {
-    @apply bg-secondary-200 hover:bg-secondary-300 text-secondary-800 font-medium py-3 px-6 rounded-lg transition-colors duration-200;
-  }
 }
 
 @layer utilities {
@@ -42,23 +32,5 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
-  }
-  
-  /* Smooth gradient animations */
-  .gradient-animate {
-    background-size: 200% 200%;
-    animation: gradient 3s ease infinite;
-  }
-  
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
   }
 }

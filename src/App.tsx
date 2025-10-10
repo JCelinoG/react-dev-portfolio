@@ -1,10 +1,8 @@
 import React, { Suspense, lazy } from 'react';
-import { HelmetProvider } from 'react-helmet-async';
 import { AppProvider } from './contexts/AppProvider';
-import { Header } from './components/ui/Header/Header';
+import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
 import { ScrollToTop } from './components/ScrollToTop/ScrollToTop';
-import { SEO } from './components/SEO/SEO';
 import { Loading } from './components/Loading/Loading';
 
 // Lazy load main sections for better performance
@@ -15,28 +13,44 @@ const Skills = lazy(() => import('./components/Skills/Skills').then(module => ({
 const Education = lazy(() => import('./components/Education/Education').then(module => ({ default: module.Education })));
 const Contact = lazy(() => import('./components/Contact/Contact').then(module => ({ default: module.Contact })));
 
+// Simple SEO component without external dependencies
+const SimpleSEO: React.FC = () => {
+  React.useEffect(() => {
+    // Set document title and meta tags
+    document.title = 'João Gualberto - Full-Stack Developer';
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      const meta = document.createElement('meta');
+      meta.name = 'description';
+      meta.content = 'Full-Stack Developer with 5+ years of experience creating robust web solutions. Specialized in React, Angular, TypeScript, and Python.';
+      document.head.appendChild(meta);
+    }
+  }, []);
+
+  return null;
+};
+
 function App() {
   return (
-    <HelmetProvider>
-      <AppProvider>
-        <div className="min-h-screen bg-white dark:bg-secondary-900 transition-colors">
-          <SEO />
-          <Header />
-          <main>
-            <Suspense fallback={<Loading />}>
-              <Hero />
-              <Experience />
-              <Projects />
-              <Skills />
-              <Education />
-              <Contact />
-            </Suspense>
-          </main>
-          <Footer />
-          <ScrollToTop />
-        </div>
-      </AppProvider>
-    </HelmetProvider>
+    <AppProvider>
+      <div className="min-h-screen bg-white dark:bg-secondary-900 transition-colors">
+        <SimpleSEO />
+        <Header />
+        <main>
+          <Suspense fallback={<Loading />}>
+            <Hero />
+            <Experience />
+            <Projects />
+            <Skills />
+            <Education />
+            <Contact />
+          </Suspense>
+        </main>
+        <Footer />
+        <ScrollToTop />
+      </div>
+    </AppProvider>
   );
 }
 
