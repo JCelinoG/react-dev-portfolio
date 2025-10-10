@@ -71,6 +71,26 @@ skillsDescription: {
 techStack: {
   pt: 'Tech Stack',
   en: 'Tech Stack'
+},
+education: {
+  pt: 'Formação',
+  en: 'Education'
+},
+educationDescription: {
+  pt: 'Minha jornada acadêmica e caminho de aprendizado contínuo',
+  en: 'My academic journey and continuous learning path'
+},
+languages: {
+  pt: 'Idiomas',
+  en: 'Languages'
+},
+contact: {
+  pt: 'Vamos Trabalhar Juntos',
+  en: "Let's Work Together"
+},
+contactDescription: {
+  pt: 'Pronto para dar vida às suas ideias? Vamos discutir seu projeto!',
+  en: "Ready to bring your ideas to life? Let's discuss your project!"
 }
 };
 
