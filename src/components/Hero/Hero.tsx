@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useApp } from '../../contexts/AppContext';
-import { Button } from '../ui/Button';
+import { Button } from '../Button/Button';
 import { FiDownload, FiArrowRight } from 'react-icons/fi';
 
 export const Hero: React.FC = () => {

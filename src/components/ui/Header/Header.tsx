@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useApp } from '../../contexts/AppContext';
+import { useApp } from '../../../contexts/AppContext';
 import { Button } from '../ui/Button';
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 

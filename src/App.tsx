@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppProvider } from './contexts/AppContext';
-import { Header } from './components/Header/Header';
+import { Header } from './components/ui/Header/Header';
 import { Hero } from './components/Hero/Hero';
 
 function App() {
