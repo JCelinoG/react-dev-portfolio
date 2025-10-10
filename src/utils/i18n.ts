@@ -60,6 +60,18 @@ allProjects: {
   pt: 'Todos os Projetos',
   en: 'All Projects'
 },
+skills: {
+  pt: 'Habilidades',
+  en: 'Skills'
+},
+skillsDescription: {
+  pt: 'Tecnologias e ferramentas que uso para dar vida às ideias',
+  en: 'Technologies and tools I use to bring ideas to life'
+},
+techStack: {
+  pt: 'Tech Stack',
+  en: 'Tech Stack'
+}
 };
 
 class I18n {

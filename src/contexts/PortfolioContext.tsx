@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useMemo } from 'react';
-import { Project, Experience, Skill } from '../types';
+import type { Experience, Project, Skill } from '../types';
 
 interface PortfolioContextType {
   projects: Project[];
@@ -95,21 +95,37 @@ const mockExperiences: Experience[] = [
     type: 'full-time'
   }
 ];
-
 const mockSkills: Skill[] = [
+  // Frontend
   { name: 'React', category: 'frontend', level: 90, years: 4 },
   { name: 'TypeScript', category: 'frontend', level: 85, years: 3 },
   { name: 'Angular', category: 'frontend', level: 80, years: 3 },
   { name: 'Next.js', category: 'frontend', level: 75, years: 2 },
+  { name: 'JavaScript', category: 'frontend', level: 88, years: 5 },
+  { name: 'Tailwind CSS', category: 'frontend', level: 82, years: 3 },
+  
+  // Backend
   { name: 'Python', category: 'backend', level: 80, years: 4 },
   { name: 'Django', category: 'backend', level: 75, years: 3 },
   { name: 'Node.js', category: 'backend', level: 70, years: 2 },
   { name: 'PostgreSQL', category: 'backend', level: 75, years: 3 },
+  { name: 'Spring Framework', category: 'backend', level: 65, years: 2 },
+  
+  // Tools & DevOps
   { name: 'Git', category: 'tools', level: 85, years: 5 },
   { name: 'Docker', category: 'tools', level: 70, years: 2 },
+  { name: 'Google Cloud', category: 'tools', level: 65, years: 2 },
+  { name: 'Scrum', category: 'tools', level: 80, years: 4 },
+  
+  // Design
   { name: 'Figma', category: 'design', level: 65, years: 2 },
-  { name: 'Scrum', category: 'soft', level: 80, years: 4 },
-  { name: 'Teaching', category: 'soft', level: 85, years: 3 }
+  { name: 'UI/UX Design', category: 'design', level: 70, years: 3 },
+  
+  // Soft Skills
+  { name: 'Teaching', category: 'soft', level: 85, years: 3 },
+  { name: 'Mentoring', category: 'soft', level: 80, years: 3 },
+  { name: 'Communication', category: 'soft', level: 85, years: 5 },
+  { name: 'Problem Solving', category: 'soft', level: 90, years: 5 }
 ];
 
 export const PortfolioProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {

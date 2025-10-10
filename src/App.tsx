@@ -1,8 +1,10 @@
+import React from 'react';
 import { AppProvider } from './contexts/AppProvider';
 import { Header } from './components/ui/Header/Header';
 import { Hero } from './components/Hero/Hero';
 import { Experience } from './components/Experience/Experience';
 import { Projects } from './components/Projects/Projects';
+import { Skills } from './components/Skills/Skills';
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
           <Hero />
           <Experience />
           <Projects />
+          <Skills />
         </main>
       </div>
     </AppProvider>
