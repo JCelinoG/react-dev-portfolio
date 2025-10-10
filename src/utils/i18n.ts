@@ -51,7 +51,15 @@ export const translations: Translations = {
   viewDetails: {
     pt: 'Ver Detalhes',
     en: 'View Details'
-  }
+  },
+  projectsDescription: {
+  pt: 'Uma coleção de projetos que construí e contribuí',
+  en: 'A collection of projects I have built and contributed to'
+},
+allProjects: {
+  pt: 'Todos os Projetos',
+  en: 'All Projects'
+},
 };
 
 class I18n {

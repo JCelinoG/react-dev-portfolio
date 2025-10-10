@@ -1,8 +1,8 @@
-import React from 'react';
 import { AppProvider } from './contexts/AppProvider';
 import { Header } from './components/ui/Header/Header';
 import { Hero } from './components/Hero/Hero';
 import { Experience } from './components/Experience/Experience';
+import { Projects } from './components/Projects/Projects';
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
         <main>
           <Hero />
           <Experience />
+          <Projects />
         </main>
       </div>
     </AppProvider>
