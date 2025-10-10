@@ -39,6 +39,18 @@ export const translations: Translations = {
   downloadCV: {
     pt: 'Baixar CV',
     en: 'Download CV'
+  },
+   experienceDescription: {
+    pt: 'Minha jornada através do desenvolvimento de software e educação',
+    en: 'My journey through software development and education'
+  },
+  currentPosition: {
+    pt: 'Posição Atual',
+    en: 'Current Position'
+  },
+  viewDetails: {
+    pt: 'Ver Detalhes',
+    en: 'View Details'
   }
 };
 

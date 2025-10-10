@@ -49,24 +49,50 @@ const mockExperiences: Experience[] = [
     positionPt: 'Instrutor de Programação',
     period: '2023 - Present',
     periodPt: '2023 - Atual',
-    description: 'Conduct IT courses and training programs in web, mobile, and desktop programming',
-    descriptionPt: 'Ministro cursos e programas de treinamento em TI para programação web, mobile e desktop',
-    technologies: ['Teaching', 'Mentoring', 'Programming Logic', 'Full-stack Development'],
+    description: 'Conduct IT courses and training programs in web, mobile, and desktop programming. Train new professionals in software development practices and fundamentals.',
+    descriptionPt: 'Ministro cursos e programas de treinamento em TI para programação web, mobile e desktop. Treino novos profissionais em práticas e fundamentos de desenvolvimento de software.',
+    technologies: ['Teaching', 'Mentoring', 'Programming Logic', 'Front-end', 'Back-end', 'Databases'],
     current: true,
     type: 'education'
   },
   {
     id: '2',
     company: 'Freelance',
-    position: 'Web Developer',
-    positionPt: 'Desenvolvedor Web',
+    position: 'Full-Stack Developer',
+    positionPt: 'Desenvolvedor Full-Stack',
     period: 'Jun 2024 - Present',
     periodPt: 'Jun 2024 - Atual',
-    description: 'Develop responsive websites and business applications using modern technologies',
-    descriptionPt: 'Desenvolvo sites responsivos e aplicações empresariais usando tecnologias modernas',
-    technologies: ['Angular', 'Next.js', 'React', 'TypeScript', 'WordPress'],
+    description: 'Develop responsive websites and business applications using modern technologies. Created legal platforms and management systems with focus on performance and UX.',
+    descriptionPt: 'Desenvolvo sites responsivos e aplicações empresariais usando tecnologias modernas. Criei plataformas jurídicas e sistemas de gestão com foco em performance e UX.',
+    technologies: ['Angular', 'Next.js', 'React', 'TypeScript', 'WordPress', 'Tailwind CSS'],
     current: true,
     type: 'freelance'
+  },
+  {
+    id: '3',
+    company: 'Niceplanet Geotechnologia',
+    position: 'Frontend Developer',
+    positionPt: 'Desenvolvedor Frontend',
+    period: 'Jun 2022 - Jun 2024',
+    periodPt: 'Jun 2022 - Jun 2024',
+    description: 'Developed web applications focused on traceability and socio-environmental compliance for agribusiness. Integrated GIS for mapping and geospatial data visualization.',
+    descriptionPt: 'Desenvolvi aplicações web focadas em rastreabilidade e conformidade socioambiental para agronegócio. Integrei GIS para mapeamento e visualização de dados geoespaciais.',
+    technologies: ['React', 'JavaScript', 'TypeScript', 'Styled Components', 'GIS', 'Google Cloud'],
+    current: false,
+    type: 'full-time'
+  },
+  {
+    id: '4',
+    company: 'Projuris By Softplan',
+    position: 'Frontend Developer',
+    positionPt: 'Desenvolvedor Frontend',
+    period: 'May 2021 - May 2022',
+    periodPt: 'Mai 2021 - Mai 2022',
+    description: 'Developed and maintained web applications for the legal sector. Created responsive and scalable interfaces with Angular and TypeScript.',
+    descriptionPt: 'Desenvolvi e mantive aplicações web para o setor jurídico. Criei interfaces responsivas e escaláveis com Angular e TypeScript.',
+    technologies: ['Angular', 'TypeScript', 'SCSS', 'Docker', 'Cypress', 'Jest'],
+    current: false,
+    type: 'full-time'
   }
 ];
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { AppProvider } from './contexts/AppProvider';
 import { Header } from './components/ui/Header/Header';
 import { Hero } from './components/Hero/Hero';
+import { Experience } from './components/Experience/Experience';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Header />
         <main>
           <Hero />
+          <Experience />
         </main>
       </div>
     </AppProvider>
