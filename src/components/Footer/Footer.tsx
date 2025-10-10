@@ -28,8 +28,8 @@ export const Footer: React.FC = () => {
             {/* Social Links */}
             <div className="flex justify-center space-x-4 mb-6">
               {[
-                { icon: FiGithub, href: 'https://github.com/joaocg14', label: 'GitHub' },
-                { icon: FiLinkedin, href: 'https://linkedin.com/in/joaocg14', label: 'LinkedIn' },
+                { icon: FiGithub, href: 'https://github.com/JCelinoG', label: 'GitHub' },
+                { icon: FiLinkedin, href: 'https://www.linkedin.com/in/joao-celino-gualberto/', label: 'LinkedIn' },
                 { icon: FiMail, href: 'mailto:joaocg14@gmail.com', label: 'Email' }
               ].map((social, index) => (
                 <motion.a

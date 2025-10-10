@@ -102,19 +102,17 @@ export const Hero: React.FC = () => {
             <div className="relative">
               {/* Gradient Border */}
               <div className="absolute -inset-4 bg-gradient-to-r from-primary-400 to-primary-600 rounded-2xl blur-lg opacity-75" />
-              
-              {/* Photo Container */}
-              <div className="relative bg-white rounded-2xl p-2 shadow-xl">
-                <div className="w-80 h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-xl flex items-center justify-center">
-                  <div className="text-center text-secondary-400">
-                    {/* Placeholder para sua foto */}
-                    <div className="w-32 h-32 bg-primary-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-2xl">📸</span>
-                    </div>
-                    <p className="text-sm">Sua foto aqui</p>
-                  </div>
-                </div>
+           {/* Photo Container */}
+            <div className="relative bg-white rounded-2xl p-2 shadow-xl">
+              <div className="w-80 h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-xl flex items-center justify-center overflow-hidden">
+                {/* Sua Foto */}
+                <img 
+                  src="src\assets\img\1759463205265.jpg" 
+                  alt="João Gualberto - Software Engineer"
+                  className="w-full h-full object-cover rounded-xl"
+                />
               </div>
+            </div>
 
               {/* Floating Elements */}
               <motion.div

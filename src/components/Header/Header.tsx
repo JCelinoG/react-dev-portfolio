@@ -75,7 +75,7 @@ export const Header: React.FC = () => {
                 <FiGithub size={20} />
               </motion.a>
               <motion.a
-                href="https://linkedin.com/in/joaocg14"
+                href="https://www.linkedin.com/in/joao-celino-gualberto/"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 className="p-2 text-secondary-600 hover:text-secondary-900 transition-colors"

@@ -57,13 +57,13 @@ export const Contact: React.FC = () => {
     {
       icon: FiLinkedin,
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/joaocg14',
+      href: 'https://www.linkedin.com/in/joao-celino-gualberto/',
       color: 'hover:text-blue-600'
     },
     {
       icon: FiGithub,
       label: 'GitHub',
-      href: 'https://github.com/joaocg14',
+      href: 'https://github.com/JCelinoG',
       color: 'hover:text-gray-700 dark:hover:text-white'
     },
     {

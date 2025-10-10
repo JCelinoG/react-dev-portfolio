@@ -22,7 +22,7 @@ const mockProjects: Project[] = [
     technologies: ['Next.js', 'React', 'TypeScript', 'Ant Design', 'Node.js'],
     imageUrl: '/projects/legal-platform.jpg',
     demoUrl: 'https://legal-platform.demo.com',
-    githubUrl: 'https://github.com/joaocg14/legal-platform',
+    githubUrl: 'https://github.com/JCelinoG/legal-platform',
     featured: true,
     category: 'fullstack',
     status: 'completed'
@@ -34,7 +34,7 @@ const mockProjects: Project[] = [
     descriptionPt: 'Aplicação web para rastreabilidade e conformidade socioambiental no agronegócio',
     technologies: ['React', 'JavaScript', 'Styled Components', 'GIS', 'Google Cloud'],
     imageUrl: '/projects/agribusiness.jpg',
-    githubUrl: 'https://github.com/joaocg14/agribusiness-app',
+    githubUrl: 'https://github.com/JCelinoG/agribusiness-app',
     featured: true,
     category: 'frontend',
     status: 'completed'
