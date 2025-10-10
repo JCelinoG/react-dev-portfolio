@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useApp } from '../../contexts/AppContext';
-import { FiMail, FiPhone, FiMapPin, FiSend, FiLinkedin, FiGithub, FiMessageCircle } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiSend, FiLinkedin, FiGithub, FiMessageCircle, FiCheck, FiX } from 'react-icons/fi';
+import emailjs from '@emailjs/browser';
 
 export const Contact: React.FC = () => {
   const { t } = useApp();
@@ -12,17 +13,51 @@ export const Contact: React.FC = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+
+  const EMAILJS_CONFIG = {
+    serviceId: 'service_s95347u', 
+    templateId: 'template_5dfnesp',
+    publicKey: 'bsc336aLIK4YtIZyv'
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+    setSubmitStatus('idle');
+
+    try {
+      const result = await emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: 'João',
+          date: new Date().toLocaleDateString('pt-BR')
+        },
+        EMAILJS_CONFIG.publicKey
+      );
+
+      if (result.status === 200) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        
+        // Auto-hide success message after 5 seconds
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      }
+    } catch (error) {
+      console.error('Erro ao enviar email:', error);
+      setSubmitStatus('error');
+      
+      // Auto-hide error message after 5 seconds
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    } finally {
       setIsSubmitting(false);
-      alert('Message sent successfully!');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 2000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -49,7 +84,7 @@ export const Contact: React.FC = () => {
       icon: FiMapPin,
       label: 'Location',
       value: 'Brazil - Remote',
-      href: '#'
+      href: 'https://maps.app.goo.gl/u7vovpKA1zkKPAnz6'
     }
   ];
 
@@ -74,27 +109,6 @@ export const Contact: React.FC = () => {
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5
-      }
-    }
-  };
-
   return (
     <section id="contact" className="section-padding bg-white dark:bg-secondary-900">
       <div className="container-custom">
@@ -106,27 +120,47 @@ export const Contact: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 dark:text-white mb-4">
-            {t('contact2') || "Let's Work Together"}
+            {t('contact') || "Let's Work Together"}
           </h2>
           <p className="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
             {t('contactDescription') || "Ready to bring your ideas to life? Let's discuss your project!"}
           </p>
         </motion.div>
 
+        {/* Status Messages */}
+        {submitStatus === 'success' && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg flex items-center"
+          >
+            <FiCheck className="mr-2" />
+            Mensagem enviada com sucesso! Entrarei em contato em breve. 🚀
+          </motion.div>
+        )}
+
+        {submitStatus === 'error' && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg flex items-center"
+          >
+            <FiX className="mr-2" />
+            Oops! Algo deu errado. Tente novamente ou me envie um email diretamente.
+          </motion.div>
+        )}
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="space-y-8"
           >
-            {/* Contact Info Cards */}
             {contactInfo.map((item, index) => (
               <motion.a
                 key={index}
-                variants={itemVariants}
                 href={item.href}
                 className="flex items-center space-x-4 p-6 bg-secondary-50 dark:bg-secondary-800 rounded-2xl hover:shadow-lg transition-all duration-300 group"
               >
@@ -145,7 +179,12 @@ export const Contact: React.FC = () => {
             ))}
 
             {/* Social Links */}
-            <motion.div variants={itemVariants} className="pt-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="pt-6"
+            >
               <h3 className="text-lg font-semibold text-secondary-900 dark:text-white mb-4">
                 Follow Me
               </h3>
@@ -250,7 +289,7 @@ export const Contact: React.FC = () => {
                 {isSubmitting ? (
                   <>
                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    <span>Sending...</span>
+                    <span>Enviando...</span>
                   </>
                 ) : (
                   <>
