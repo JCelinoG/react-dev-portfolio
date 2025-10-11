@@ -28,10 +28,14 @@ export const translations: Translations = {
     pt: 'Contato',
     en: 'Contact'
   },
-  hero: {
-    pt: 'Desenvolvedor Full-Stack & Instrutor',
-    en: 'Full-Stack Developer & Instructor'
+   followme: {
+    pt: 'Siga-me',
+    en: 'Follow me'
   },
+hero: {
+  pt: 'Engenheiro de Software & Instrutor de Programação',
+  en: 'Software Engineer & Programming Instructor'
+},
   viewProjects: {
     pt: 'Ver Projetos',
     en: 'View Projects'

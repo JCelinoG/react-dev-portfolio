@@ -186,7 +186,7 @@ export const Contact: React.FC = () => {
               className="pt-6"
             >
               <h3 className="text-lg font-semibold text-secondary-900 dark:text-white mb-4">
-                Follow Me
+              {t('followme') || "Follow Me"}
               </h3>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (

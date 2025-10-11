@@ -54,8 +54,7 @@ export const Hero: React.FC = () => {
               </h2>
               <p className="text-lg text-secondary-500 leading-relaxed">
                 Desenvolvedor Full-Stack com 5+ anos de experiência criando soluções web 
-                robustas e de alta performance. Especializado em React, Angular, TypeScript 
-                e Python.
+                robustas e de alta performance. Especializado em React, Angular, TypeScript e Java.
               </p>
             </motion.div>
 

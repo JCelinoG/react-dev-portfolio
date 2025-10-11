@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
               {[
                 { icon: FiGithub, href: 'https://github.com/JCelinoG', label: 'GitHub' },
                 { icon: FiLinkedin, href: 'https://www.linkedin.com/in/joao-celino-gualberto/', label: 'LinkedIn' },
-                { icon: FiMail, href: 'mailto:joaocg14@gmail.com', label: 'Email' }
+                { icon: FiMail, href: 'mailto:celinogualberto@gmail.com', label: 'Email' }
               ].map((social, index) => (
                 <motion.a
                   key={index}
