@@ -95,7 +95,28 @@ contact2: {
 contactDescription: {
   pt: 'Pronto para dar vida às suas ideias? Vamos discutir seu projeto!',
   en: "Ready to bring your ideas to life? Let's discuss your project!"
+},
+welcome:{
+  pt: "bem-vindo(a)",
+  en: "welcome"
+},
+shortBio:{
+   pt: "Engenheiro de Software com 5+ anos de experiência criando soluções web robustas e de alta performance. Especializado em React, Angular, TypeScript e Java.",
+  en: "Software Engineer with 5+ years of experience building robust and high-performance web solutions. Specialized in React, Angular, TypeScript and Java."
+},
+years_exp: {
+  pt: "Anos de Experiência",
+  en: "Years of Experience"
+},
+modern_tech: {
+  pt: "Tecnologias Modernas",
+  en: "Modern Technologies"
+},
+commitment: {
+  pt: "Compromisso",
+  en: "Commitment" 
 }
+
 };
 
 class I18n {

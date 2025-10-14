@@ -28,6 +28,12 @@ export const Hero: React.FC = () => {
     }
   };
 
+  const getStats = () => [
+  { value: '5+', label: t('years_exp') },
+  { value: '💻', label: t('modern_tech') },
+  { value: '100%', label: t('commitment') }
+]
+
   return (
     <section id="hero" className="min-h-screen flex items-center pt-20 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
       <div className="container-custom">
@@ -41,7 +47,7 @@ export const Hero: React.FC = () => {
           <div className="space-y-6">
             <motion.div variants={itemVariants} className="space-y-4">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-sm font-medium">
-                👋 {t('welcome') || 'Bem-vindo ao meu portfólio'}
+                👋 {t('welcome')}
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-900 leading-tight">
                 João Celino{' '}
@@ -53,8 +59,7 @@ export const Hero: React.FC = () => {
                 {t('hero')}
               </h2>
               <p className="text-lg text-secondary-500 leading-relaxed">
-                Desenvolvedor Full-Stack com 5+ anos de experiência criando soluções web 
-                robustas e de alta performance. Especializado em React, Angular, TypeScript e Java.
+                {t('shortBio')}
               </p>
             </motion.div>
 
@@ -80,11 +85,7 @@ export const Hero: React.FC = () => {
 
             {/* Quick Stats */}
             <motion.div variants={itemVariants} className="grid grid-cols-3 gap-4 pt-8">
-              {[
-                { value: '5+', label: 'Anos Exp' },
-                { value: '50+', label: 'Projetos' },
-                { value: '100%', label: 'Compromisso' }
-              ].map((stat, index) => (
+             {getStats().map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="text-2xl font-bold text-primary-600">{stat.value}</div>
                   <div className="text-sm text-secondary-500">{stat.label}</div>
