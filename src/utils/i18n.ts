@@ -45,8 +45,8 @@ hero: {
     en: 'Download CV'
   },
    experienceDescription: {
-    pt: 'Minha jornada através do desenvolvimento de software e educação',
-    en: 'My journey through software development and education'
+    pt: 'Minha jornada através do Desenvolvimento de Software',
+    en: 'My journey through Software Development'
   },
   currentPosition: {
     pt: 'Posição Atual',
