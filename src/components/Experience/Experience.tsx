@@ -92,7 +92,7 @@ export const Experience: React.FC = () => {
                     </div>
                     <div className="flex items-center space-x-2 text-secondary-500 dark:text-secondary-400">
                       <FiMapPin size={16} />
-                      <span className="text-sm">Remote</span>
+                      <span className="text-sm">{experience.workMode}</span>
                     </div>
                   </div>
 

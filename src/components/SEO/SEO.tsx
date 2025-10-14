@@ -13,7 +13,7 @@ export const SEO: React.FC<SEOProps> = ({
   title = "João Gualberto - Full-Stack Developer",
   description = "Full-Stack Developer with 5+ years of experience creating robust web solutions. Specialized in React, Angular, TypeScript, and Python.",
   keywords = "full-stack developer, react, angular, typescript, python, django, portfolio",
-  image = "/og-image.jpg",
+  image = "src/assets/img/1759463205265.jpg",
   url = "https://joaogualberto.dev"
 }) => {
   return (
