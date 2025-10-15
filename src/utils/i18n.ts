@@ -65,8 +65,8 @@ allProjects: {
   en: 'All Projects'
 },
 skills: {
-  pt: 'Habilidades',
-  en: 'Skills'
+  pt: 'Habilidades técnicas',
+  en: 'Tech Stack'
 },
 skillsDescription: {
   pt: 'Tecnologias e ferramentas que uso para dar vida às ideias',

@@ -13,10 +13,8 @@ const Skills = lazy(() => import('./components/Skills/Skills').then(module => ({
 const Education = lazy(() => import('./components/Education/Education').then(module => ({ default: module.Education })));
 const Contact = lazy(() => import('./components/Contact/Contact').then(module => ({ default: module.Contact })));
 
-// Simple SEO component without external dependencies
 const SimpleSEO: React.FC = () => {
   React.useEffect(() => {
-    // Set document title and meta tags
     document.title = 'João Gualberto - Full-Stack Developer';
     
     const metaDescription = document.querySelector('meta[name="description"]');

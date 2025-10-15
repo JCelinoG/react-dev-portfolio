@@ -136,8 +136,8 @@ const mockSkills: Skill[] = [
   { name: 'Tailwind CSS', category: 'frontend', level: 82, years: 3 },
   
   // Backend
+  { name: 'Java', category: 'backend', level: 75, years: 3 },
   { name: 'Python', category: 'backend', level: 80, years: 4 },
-  { name: 'Django', category: 'backend', level: 75, years: 3 },
   { name: 'Node.js', category: 'backend', level: 70, years: 2 },
   { name: 'PostgreSQL', category: 'backend', level: 75, years: 3 },
   { name: 'Spring Framework', category: 'backend', level: 65, years: 2 },
@@ -153,10 +153,10 @@ const mockSkills: Skill[] = [
   { name: 'UI/UX Design', category: 'design', level: 70, years: 3 },
   
   // Soft Skills
-  { name: 'Teaching', category: 'soft', level: 85, years: 3 },
-  { name: 'Mentoring', category: 'soft', level: 80, years: 3 },
-  { name: 'Communication', category: 'soft', level: 85, years: 5 },
-  { name: 'Problem Solving', category: 'soft', level: 90, years: 5 }
+  { name: 'Teaching', category: 'soft', level: 100 },
+  { name: 'Fast Learner', category: 'soft', level: 100 },
+  { name: 'Communication', category: 'soft', level: 100},
+  { name: 'Problem Solving', category: 'soft', level: 100 }
 ];
 
 export const PortfolioProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
