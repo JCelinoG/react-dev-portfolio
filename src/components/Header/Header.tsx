@@ -70,6 +70,8 @@ export const Header: React.FC = () => {
             <div className="flex items-center space-x-2">
               <motion.a
                 href="https://github.com/JCelinoG"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 className="p-2 text-secondary-600 hover:text-secondary-900 transition-colors"
@@ -78,6 +80,8 @@ export const Header: React.FC = () => {
               </motion.a>
               <motion.a
                 href="https://www.linkedin.com/in/joao-celino-gualberto/"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 className="p-2 text-secondary-600 hover:text-secondary-900 transition-colors"
