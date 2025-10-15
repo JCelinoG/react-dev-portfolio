@@ -62,8 +62,8 @@ const mockExperiences: Experience[] = [
     positionPt: 'Desenvolvedor Full-Stack',
     period: 'Jun 2024 - Present',
     periodPt: 'Jun 2024 - Atual',
-    description: 'Develop responsive websites and business applications using modern technologies. Created legal platforms and management systems with focus on performance and UX.',
-    descriptionPt: 'Desenvolvo sites responsivos e aplicações empresariais usando tecnologias modernas. Criei plataformas jurídicas e sistemas de gestão com foco em performance e UX.',
+    description: "I develop responsive business applications with a focus on performance and user experience. I've built legal platforms for finding lawyers and management systems used by stores and businesses to control sales, inventory, and finances — including custom landing pages for companies and professionals.",
+    descriptionPt: 'Desenvolvo aplicações responsivas empresariais com foco em performance e experiência do usuário. Criei plataformas jurídicas para busca de advogados e sistemas de gestão usados por comércios e lojas para controle de vendas, estoque e financeiro. Incluindo landing pages personalizadas para empresas e profissionais. ',
     technologies: ['Angular', 'Next.js', 'React', 'TypeScript', 'WordPress', 'Tailwind CSS'],
     current: true,
     type: 'freelance',
@@ -96,7 +96,35 @@ const mockExperiences: Experience[] = [
     current: false,
     type: 'full-time',
     workMode: 'Remote'
-  }
+  },
+  {
+  id: '5',
+  company: 'Federal University of Tocantins',
+  position: 'Software Developer',
+  positionPt: 'Desenvolvedor de Software',
+  period: 'Oct 2020 - Nov 2021',
+  periodPt: 'Out 2020 - Nov 2021',
+  description: 'Maintained Python middleware for HTTP communication between physical access gates and web applications. Developed Mifare card readers with Arduino and C++ for access control. Created web applications for educational process management using Django, and Bootstrap. Designed user interfaces in Figma with a focus on UX. Managed MySQL databases using Doctrine.',
+  descriptionPt: 'Mantive middleware em Python para comunicação HTTP entre catracas de acesso físico e aplicações web. Desenvolvi leitores de cartão Mifare com Arduino e C++ para controle de acesso. Criei aplicações web para gestão de processos educacionais usando Django e Bootstrap. Modelei interfaces no Figma com foco em experiência do usuário. Gerenciei bancos de dados MySQL com Doctrine.',
+  technologies: ['Python', 'Django', 'Arduino', 'C++', 'Bootstrap', 'MySQL', 'Doctrine', 'Git', 'Figma'],
+  current: false,
+  type: 'internship',
+  workMode: 'On-site'
+},
+{
+  id: '6',
+  company: 'Institute of Attention to Cities (IAC)',
+  position: 'Software Developer',
+  positionPt: 'Desenvolvedor de Software',
+  period: 'Feb 2019 - Feb 2020',
+  periodPt: 'Fev 2019 - Fev 2020',
+  description: 'Developed a web application to manage water resource grants and streamline environmental licensing processes. Built responsive UI components using Angular 8/9 and Bootstrap. Migrated Java code to Kotlin and improved the existing codebase using the Spring Framework. Handled database operations with PostgreSQL.',
+  descriptionPt: 'Desenvolvi uma aplicação web para gerenciamento de outorgas de recursos hídricos, otimizando processos de licenciamento ambiental. Construí componentes de UI responsivos com Angular 8/9 e Bootstrap. Migrando códgio Java para Kotlin aprimorando a base existente com o Spring Framework. Realizei operações com banco de dados PostgreSQL.',
+  technologies: ['Angular 8/9', 'Spring Framework', 'Kotlin', 'Bootstrap', 'PostgreSQL'],
+  current: false,
+  type: 'internship',
+  workMode: 'On-site'
+}
 ];
 const mockSkills: Skill[] = [
   // Frontend
