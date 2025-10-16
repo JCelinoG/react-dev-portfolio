@@ -15,29 +15,108 @@ const PortfolioContext = createContext<PortfolioContextType | undefined>(undefin
 const mockProjects: Project[] = [
   {
     id: '1',
-    title: 'Legal Platform',
-    description: 'Comprehensive legal management platform built with Next.js and TypeScript',
-    descriptionPt: 'Plataforma jurídica completa desenvolvida com Next.js e TypeScript',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Ant Design', 'Node.js'],
-    imageUrl: '/projects/legal-platform.jpg',
-    demoUrl: 'https://legal-platform.demo.com',
-    githubUrl: 'https://github.com/JCelinoG/legal-platform',
+    title: 'SingixMarket - Sales Management System',
+    description: 'Sistema completo para gestão de vendas, clientes e produtos com autenticação segura e interface moderna.',
+    descriptionPt: 'Sistema completo para gestão de vendas, clientes e produtos com autenticação segura e interface moderna.',
+    technologies: [
+      'Java',
+      'Spring Boot',
+      'Angular',
+      'TypeScript', 
+      'Spring Security',
+      'JWT',
+      'MySQL',
+      'Tailwind CSS',
+      'JUnit',
+      'Docker'
+
+    ],
+    imageUrl: '/projects/singixmarket.jpg',
+    demoUrl: '', 
+    githubUrl: 'https://github.com/JCelinoG/singix-market',
     featured: true,
     category: 'fullstack',
-    status: 'completed',
+    status: 'in-progress'
   },
+  
   {
     id: '2',
-    title: 'Agribusiness Management',
-    description: 'Web application for traceability and socio-environmental compliance in agribusiness',
-    descriptionPt: 'Aplicação web para rastreabilidade e conformidade socioambiental no agronegócio',
-    technologies: ['React', 'JavaScript', 'Styled Components', 'GIS', 'Google Cloud'],
-    imageUrl: '/projects/agribusiness.jpg',
-    githubUrl: 'https://github.com/JCelinoG/agribusiness-app',
+    title: 'MecGestão PDV',
+    description: 'Sistema de gestão e ponto de venda (PDV) para pequenas e médias empresas.',
+    descriptionPt: 'Sistema de gestão e ponto de venda (PDV) para pequenas e médias empresas.',
+    technologies: ['Angular', 'TypeScript', 'Spring Boot', 'Kotlin', 'MySQL', 'Bootstrap'],
+    imageUrl: '/projects/mecgestao.jpg',
+    demoUrl: 'https://mecgestao.com.br/pdv/',
+    githubUrl: '',
+    featured: true,
+    category: 'fullstack',
+    status: 'completed'
+  },
+  {
+    id: '3',
+    title: 'Dra. Natalia Beltrami',
+    description: 'Landing page profissional para ginecologista com agendamento online e informações.',
+    descriptionPt: 'Landing page profissional para ginecologista com agendamento online e informações.',
+    technologies: ['WordPress', 'Elementor', 'PHP', 'JavaScript', 'CSS'],
+    imageUrl: '/projects/dranatalia.jpg',
+    demoUrl: 'https://dranataliabeltrami.com.br/',
+    githubUrl: '', 
     featured: true,
     category: 'frontend',
     status: 'completed'
-  }
+  },
+  {
+    id: '4',
+    title: 'Projuris Empresas',
+    description: 'Plataforma legal para gestão jurídica empresarial e compliance.',
+    descriptionPt: 'Plataforma legal para gestão jurídica empresarial e compliance.',
+    technologies: ['Angular', 'TypeScript', 'C#', '.NET', 'SQL Server', 'SCSS'],
+    imageUrl: '/projects/projuris.jpg',
+    demoUrl: 'https://www.projuris.com.br/empresas/',
+    githubUrl: '',
+    featured: true,
+    category: 'frontend',
+    status: 'completed'
+  },
+   {
+    id: '5',
+    title: 'SMGeo - Plataforma Socioambiental',
+    description: 'Sistema de Monitoramento Geográfico para cadastro, análise e monitoramento socioambiental de fornecedores no agronegócio.',
+    descriptionPt: 'Sistema de Monitoramento Geográfico para cadastro, análise e monitoramento socioambiental de fornecedores no agronegócio.',
+    technologies: ['React', 'JavaScript', 'TypeScript', 'Styled Components', 'GIS', 'Google Cloud', 'Leaflet', 'Mapbox'],
+    imageUrl: '/projects/smgeo.jpg',
+    demoUrl: 'https://niceplanet.com.br/smgeo',
+    githubUrl: '',
+    featured: true,
+    category: 'fullstack',
+    status: 'completed'
+  },
+   {
+    id: '6',
+    title: 'SMGeo Consulta - Integração Socioambiental',
+    description: 'Plataforma que conecta notas fiscais de agroindústrias a fazendas fornecedoras, automatizando a entrega de informações socioambientais para compradores, varejistas e curtumes.',
+    descriptionPt: 'Plataforma que conecta notas fiscais de agroindústrias a fazendas fornecedoras, automatizando a entrega de informações socioambientais para compradores, varejistas e curtumes.',
+    technologies: ['React', 'TypeScript', 'Styled Components', 'GIS', 'Google Cloud', 'Node.js', 'PostgreSQL', 'REST API'],
+    imageUrl: '/projects/smgeo-consulta.jpg',
+    demoUrl: 'https://niceplanet.com.br/smgeo-consulta',
+    githubUrl: '',
+    featured: true,
+    category: 'fullstack',
+    status: 'completed'
+  },
+  {
+    id: '7',
+    title: 'Defendy - Plataforma Jurídica',
+    description: 'Plataforma jurídica completa para gestão de processos e atendimento ao cliente.',
+    descriptionPt: 'Plataforma jurídica completa para gestão de processos e atendimento ao cliente.',
+    technologies: ['React', 'TypeScript', 'Next.js', 'Node.js', 'PostgreSQL', 'Tailwind CSS'],
+    imageUrl: '/projects/defendy.jpg',
+    demoUrl: 'https://defendy.com.br',
+    githubUrl: '', 
+    featured: true,
+    category: 'fullstack',
+    status: 'completed'
+  },
 ];
 
 const mockExperiences: Experience[] = [
