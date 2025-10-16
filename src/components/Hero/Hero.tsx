@@ -107,7 +107,7 @@ export const Hero: React.FC = () => {
               <div className="w-80 h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-xl flex items-center justify-center overflow-hidden">
                 {/* Sua Foto */}
                 <img 
-                  src="src\assets\img\1759463205265.jpg" 
+                  src="src\assets\img\17594632052652.jpeg" 
                   alt="João Gualberto - Software Engineer"
                   className="w-full h-full object-cover rounded-xl"
                 />
