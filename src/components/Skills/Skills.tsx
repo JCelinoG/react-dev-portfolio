@@ -34,12 +34,10 @@ export const Skills: React.FC = () => {
   const { t } = useApp();
   const { skills } = useUserData();
 
-  // Filtrar apenas skills técnicas (remover soft skills)
   const technicalSkills = skills.filter(skill => 
     ['frontend', 'backend', 'tools', 'mobile', 'design'].includes(skill.category)
   );
 
-  // Agrupar skills por categoria
   const skillsByCategory = {
     frontend: technicalSkills.filter(skill => skill.category === 'frontend'),
     backend: technicalSkills.filter(skill => skill.category === 'backend'),
