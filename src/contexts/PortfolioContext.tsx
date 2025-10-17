@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useMemo } from 'react';
 import type { Experience, Project, Skill } from '../types';
+import smgeoConsulta from '../../src/assets/img/projects/smgeo-consulta.png';
 
 interface PortfolioContextType {
   projects: Project[];
@@ -109,7 +110,7 @@ const mockProjects: Project[] = [
     description: 'Platform that connects invoices from agro-industries to supplier farms, automating the delivery of socio-environmental information to buyers, retailers, and tanneries.',
     descriptionPt: 'Plataforma que conecta notas fiscais de agroindústrias a fazendas fornecedoras, automatizando a entrega de informações socioambientais para compradores, varejistas e curtumes.',
     technologies: ['React', 'TypeScript', 'Styled Components', 'REST API'],
-    imageUrl: 'src/assets/img/projects/smgeo-consulta.png',
+    imageUrl: smgeoConsulta,
     demoUrl: 'https://niceplanet.com.br/smgeo-consulta',
     githubUrl: '',
     featured: true,
