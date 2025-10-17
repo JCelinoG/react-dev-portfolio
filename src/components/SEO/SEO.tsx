@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
   title?: string;
@@ -17,7 +16,7 @@ export const SEO: React.FC<SEOProps> = ({
   url = "https://joaogualberto.dev"
 }) => {
   return (
-    <Helmet>
+    <>
       {/* Basic Meta Tags */}
       <title>{title}</title>
       <meta name="description" content={description} />
@@ -41,6 +40,6 @@ export const SEO: React.FC<SEOProps> = ({
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="theme-color" content="#0ea5e9" />
       <link rel="canonical" href={url} />
-    </Helmet>
+    </>
   );
 };
