@@ -103,7 +103,7 @@ export const Experience: React.FC = () => {
                   </div>
 
                   {/* Description */}
-                  <p className="text-secondary-600 dark:text-secondary-300 mb-3 leading-relaxed text-sm">
+                  <p className="text-secondary-600 dark:text-secondary-300 mb-3 leading-relaxed text-base">
                     {experience.description}
                   </p>
 
