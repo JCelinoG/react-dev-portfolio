@@ -9,6 +9,20 @@ export const Projects: React.FC = () => {
   const { projects } = useUserData();
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
+  const getProjectGradient = (project: any) => {
+    const gradients = {
+      juridico: 'from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900',
+      agronegocio: 'from-green-100 to-emerald-100 dark:from-green-900 dark:to-emerald-900',
+      saude: 'from-pink-100 to-rose-100 dark:from-pink-900 dark:to-rose-900',
+      gestao: 'from-orange-100 to-amber-100 dark:from-orange-900 dark:to-amber-900',
+      ecommerce: 'from-cyan-100 to-sky-100 dark:from-cyan-900 dark:to-sky-900',
+      portfolio: 'from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900',
+      default: 'from-primary-100 to-secondary-100 dark:from-primary-900 dark:to-secondary-900'
+    };
+    
+    return gradients[project.category as keyof typeof gradients] || gradients.default;
+  };
+
   const selectedProjectData = useMemo(() => {
     return projects.find(project => project.id === selectedProject);
   }, [selectedProject, projects]);
@@ -67,9 +81,25 @@ export const Projects: React.FC = () => {
                 variants={itemVariants}
                 className="bg-white dark:bg-secondary-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
               >
-                {/* Project Image */}
-                <div className="relative h-48 bg-gradient-to-br from-primary-100 to-secondary-100 dark:from-primary-900 dark:to-secondary-800 overflow-hidden">
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
+                <div className={`relative h-48 bg-gradient-to-br ${getProjectGradient(project)} overflow-hidden flex items-center justify-center`}>
+                  <div className="text-center">
+                    <div className="text-3xl mb-2">
+                      {project.category === 'juridico' && '⚖️'}
+                      {project.category === 'agronegocio' && '🌱'}
+                      {project.category === 'saude' && '🏥'}
+                      {project.category === 'ecommerce' && '🛒'}
+                      {project.category === 'portfolio' && '⚡'}
+                      {!project.category && '💼'}
+                    </div>
+                    <p className="text-sm text-secondary-600 dark:text-secondary-400 font-medium">
+                      {project.category === 'juridico' && 'Plataforma Jurídica'}
+                      {project.category === 'agronegocio' && 'Sistema Agrícola'}
+                      {project.category === 'saude' && 'Sistema de Saúde'}
+                      {project.category === 'ecommerce' && 'E-commerce'}
+                      {project.category === 'portfolio' && 'Portfolio'}
+                      {!project.category && 'Projeto'}
+                    </p>
+                  </div>
                   
                   {/* Status Badge */}
                   <div className="absolute top-4 left-4">
