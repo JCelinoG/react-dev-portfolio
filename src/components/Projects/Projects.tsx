@@ -110,8 +110,8 @@ export const Projects: React.FC = () => {
                         ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'
                         : 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
                     }`}>
-                      {project.status === 'completed' ? '✅ Concluído' : 
-                       project.status === 'in-progress' ? '🔄 Em Desenvolvimento' : '📅 Planejado'}
+                      {project.status === 'completed' ? '✅' : 
+                       project.status === 'in-progress' ? '🔄' : '📅'}
                     </span>
                   </div>
 
@@ -219,8 +219,8 @@ export const Projects: React.FC = () => {
                           ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'
                           : 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
                       }`}>
-                        {selectedProjectData.status === 'completed' ? 'Concluído' : 
-                         selectedProjectData.status === 'in-progress' ? 'Em Desenvolvimento' : 'Planejado'}
+                        {selectedProjectData.status === 'completed' ? '✅' : 
+                         selectedProjectData.status === 'in-progress' ? '🔄' : '📅'}
                       </span>
                     </div>
                   </div>

@@ -68,9 +68,9 @@ export const Education: React.FC = () => {
 
   const getStatusBadge = (status: EducationItem['status']) => {
     const statusConfig = {
-      completed: { label: 'Completed', labelPt: 'Concluído', color: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' },
-      'in-progress': { label: 'In Progress', labelPt: 'Em Andamento', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200' },
-      planned: { label: 'Planned', labelPt: 'Planejado', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200' }
+      completed: { label: '✅', labelPt: '✅', color: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' },
+      'in-progress': { label: '🔄', labelPt: '🔄', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200' },
+      planned: { label: '📅', labelPt: '📅', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200' }
     };
     
     const config = statusConfig[status];
