@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/', // Alter para '/your-repo-name/' to use GitHub Pages
+  base: '/', 
   build: {
     outDir: 'dist',
     sourcemap: false,

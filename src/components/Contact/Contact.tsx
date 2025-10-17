@@ -17,15 +17,29 @@ export const Contact: React.FC = () => {
 
 
   const EMAILJS_CONFIG = {
-    serviceId: 'service_s95347u', 
-    templateId: 'template_5dfnesp',
-    publicKey: 'bsc336aLIK4YtIZyv'
+    serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || '',
+    templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '',
+    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ''
   };
+
+  React.useEffect(() => {
+    if (!EMAILJS_CONFIG.serviceId || !EMAILJS_CONFIG.templateId || !EMAILJS_CONFIG.publicKey) {
+      console.warn('EmailJS configuration missing. Check your .env file.');
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
+
+      if (!EMAILJS_CONFIG.serviceId || !EMAILJS_CONFIG.templateId || !EMAILJS_CONFIG.publicKey) {
+        setSubmitStatus('error');
+        console.error('EmailJS not configured properly');
+        return;
+      }
+  
+      setIsSubmitting(true);
+      setSubmitStatus('idle');
+
 
     try {
       const result = await emailjs.send(
