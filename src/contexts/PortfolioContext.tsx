@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useMemo } from 'react';
 import type { Experience, Project, Skill } from '../types';
-import smgeoConsulta from '../../src/assets/img/projects/smgeo-consulta.png';
 
 interface PortfolioContextType {
   projects: Project[];
@@ -31,7 +30,7 @@ const mockProjects: Project[] = [
       'JUnit',
       'Docker'
     ],
-    imageUrl: 'src/assets/img/projects/git.png',
+    imageUrl: '/assets/img/projects/git.png',
     demoUrl: '', 
     githubUrl: 'https://github.com/JCelinoG/singix-market',
     featured: true,
@@ -56,7 +55,7 @@ const mockProjects: Project[] = [
       'Dark Mode',
       'Internationalization'
     ],
-    imageUrl: 'src/assets/img/projects/react-portfolio.png',
+    imageUrl: '/assets/img/projects/react-portfolio.PNG',
     demoUrl: '', 
     githubUrl: 'https://github.com/JCelinoG/react-dev-portfolio',
     featured: true,
@@ -69,7 +68,7 @@ const mockProjects: Project[] = [
   description: 'Maintenance and optimization of professional landing page for gynecologist, implementing performance improvements, SEO, and user experience enhancements.',
   descriptionPt: 'Manutenção e otimização da landing page profissional para ginecologista, implementando melhorias de performance, SEO e experiência do usuário.',
   technologies: ['WordPress', 'JavaScript','Elementor', 'CSS', 'SEO'],
-  imageUrl: 'src/assets/img/projects/natalia.png',
+    imageUrl: '/assets/img/projects/natalia.png',
   demoUrl: 'https://dranataliabeltrami.com.br/',
   githubUrl: '', 
   featured: true,
@@ -82,7 +81,7 @@ const mockProjects: Project[] = [
     description: 'Comprehensive legal platform for finding specialist lawyers.',
     descriptionPt: 'Plataforma jurídica completa para busca de advogados especialistas',
     technologies: ['Next.js', 'TypeScript', 'AntDesign'],
-    imageUrl: 'src/assets/img/projects/defendyLogo.png',
+    imageUrl: '/assets/img/projects/defendyLogo.png',
     demoUrl: 'https://defendy.com.br',
     githubUrl: '', 
     featured: true,
@@ -97,7 +96,8 @@ const mockProjects: Project[] = [
     description: 'Geographic Monitoring System for registration, analysis, and socio-environmental monitoring of suppliers in agribusiness.',
     descriptionPt: 'Sistema de Monitoramento Geográfico para cadastro, análise e monitoramento socioambiental de fornecedores no agronegócio.',
     technologies: ['React', 'JavaScript', 'TypeScript', 'Styled Components', 'GIS', 'Google Cloud', 'Leaflet', 'Mapbox'],
-    imageUrl: 'src/assets/img/projects/smgeo.png',
+    imageUrl: '/assets/img/projects/smgeo.PNG',
+
     demoUrl: 'https://niceplanet.com.br/smgeo',
     githubUrl: '',
     featured: true,
@@ -110,7 +110,7 @@ const mockProjects: Project[] = [
     description: 'Platform that connects invoices from agro-industries to supplier farms, automating the delivery of socio-environmental information to buyers, retailers, and tanneries.',
     descriptionPt: 'Plataforma que conecta notas fiscais de agroindústrias a fazendas fornecedoras, automatizando a entrega de informações socioambientais para compradores, varejistas e curtumes.',
     technologies: ['React', 'TypeScript', 'Styled Components', 'REST API'],
-    imageUrl: smgeoConsulta,
+    imageUrl: '/assets/img/projects/smgeo-consulta.png',
     demoUrl: 'https://niceplanet.com.br/smgeo-consulta',
     githubUrl: '',
     featured: true,
@@ -123,7 +123,7 @@ const mockProjects: Project[] = [
     description: 'Legal platform for corporate legal management and compliance.',
     descriptionPt: 'Plataforma legal para gestão jurídica empresarial e compliance.',
     technologies: ['Angular', 'TypeScript', 'Bootstrap', 'SCSS'],
-    imageUrl: 'src/assets/img/projects/projuris-logo.png',
+    imageUrl: '/assets/img/projects/projuris-logo.png',
     demoUrl: 'https://www.projuris.com.br/empresas/',
     githubUrl: '',
     featured: true,
