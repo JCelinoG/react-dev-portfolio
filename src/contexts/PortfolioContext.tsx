@@ -119,7 +119,7 @@ const mockExperiences: Experience[] = [
   period: 'Feb 2019 - Feb 2020',
   periodPt: 'Fev 2019 - Fev 2020',
   description: 'Developed a web application to manage water resource grants and streamline environmental licensing processes. Built responsive UI components using Angular 8/9 and Bootstrap. Migrated Java code to Kotlin and improved the existing codebase using the Spring Framework. Handled database operations with PostgreSQL.',
-  descriptionPt: 'Desenvolvi uma aplicação web para gerenciamento de outorgas de recursos hídricos, otimizando processos de licenciamento ambiental. Construí componentes de UI responsivos com Angular 8/9 e Bootstrap. Migrando códgio Java para Kotlin aprimorando a base existente com o Spring Framework. Realizei operações com banco de dados PostgreSQL.',
+  descriptionPt: 'Desenvolvi uma aplicação web para gerenciamento de outorgas de recursos hídricos, otimizando processos de licenciamento ambiental. Construí componentes de UI responsivos com Angular 8/9 e Bootstrap. Migrando código Java para Kotlin aprimorando a base existente com o Spring Framework. Realizei operações com banco de dados PostgreSQL.',
   technologies: ['Angular 8/9', 'Spring Framework', 'Kotlin', 'Bootstrap', 'PostgreSQL'],
   current: false,
   type: 'internship',
