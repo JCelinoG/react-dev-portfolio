@@ -26,7 +26,7 @@ export const Education: React.FC = () => {
       id: '1',
       degree: 'MBA in Software Engineering',
       degreePt: 'MBA em Engenharia de Software',
-      institution: 'University of São Paulo (USP/Esala)',
+      institution: 'University of São Paulo (USP/Esalq)',
       period: '2024 - 2025',
       periodPt: '2024 - 2025',
       status: 'in-progress',
