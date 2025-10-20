@@ -2,28 +2,26 @@ import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useApp } from '../../contexts/AppContext';
 import { useUserData } from '../../hooks/useUserData';
-import { FiGithub, FiExternalLink, FiFilter, FiX } from 'react-icons/fi';
-
-type ProjectCategory = 'all' | 'frontend' | 'fullstack' | 'mobile' | 'freelance';
+import { FiGithub, FiExternalLink, FiX } from 'react-icons/fi';
 
 export const Projects: React.FC = () => {
   const { t } = useApp();
-  const { projects, getProjectsByCategory } = useUserData();
-  const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>('all');
+  const { projects } = useUserData();
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
-  const categories: { key: ProjectCategory; label: string }[] = [
-    { key: 'all', label: 'All Projects' },
-    { key: 'fullstack', label: 'Full Stack' },
-    { key: 'frontend', label: 'Frontend' },
-    { key: 'mobile', label: 'Mobile' },
-    { key: 'freelance', label: 'Freelance' }
-  ];
-
-  const filteredProjects = useMemo(() => {
-    if (selectedCategory === 'all') return projects;
-    return getProjectsByCategory(selectedCategory);
-  }, [selectedCategory, projects, getProjectsByCategory]);
+  const getProjectGradient = (project: any) => {
+    const gradients = {
+      juridico: 'from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900',
+      agronegocio: 'from-green-100 to-emerald-100 dark:from-green-900 dark:to-emerald-900',
+      saude: 'from-pink-100 to-rose-100 dark:from-pink-900 dark:to-rose-900',
+      gestao: 'from-orange-100 to-amber-100 dark:from-orange-900 dark:to-amber-900',
+      ecommerce: 'from-cyan-100 to-sky-100 dark:from-cyan-900 dark:to-sky-900',
+      portfolio: 'from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900',
+      default: 'from-primary-100 to-secondary-100 dark:from-primary-900 dark:to-secondary-900'
+    };
+    
+    return gradients[project.category as keyof typeof gradients] || gradients.default;
+  };
 
   const selectedProjectData = useMemo(() => {
     return projects.find(project => project.id === selectedProject);
@@ -61,33 +59,11 @@ export const Projects: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 dark:text-white mb-4">
-            {t('projects') || 'Featured Projects'}
+            {t('projects') || 'Projetos em Destaque'}
           </h2>
           <p className="text-lg text-secondary-600 dark:text-secondary-400 max-w-2xl mx-auto">
-            {t('projectsDescription') || 'A collection of projects I have built and contributed to'}
+            {t('projectsDescription') || 'Uma coleção de projetos que desenvolvi e contribuí'}
           </p>
-        </motion.div>
-
-        {/* Filter Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
-        >
-          {categories.map((category) => (
-            <button
-              key={category.key}
-              onClick={() => setSelectedCategory(category.key)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
-                selectedCategory === category.key
-                  ? 'bg-primary-600 text-white shadow-lg'
-                  : 'bg-white dark:bg-secondary-700 text-secondary-700 dark:text-secondary-300 hover:bg-primary-50 dark:hover:bg-secondary-600'
-              }`}
-            >
-              {category.label}
-            </button>
-          ))}
         </motion.div>
 
         {/* Projects Grid */}
@@ -99,16 +75,48 @@ export const Projects: React.FC = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           <AnimatePresence>
-            {filteredProjects.map((project) => (
+            {projects.map((project) => (
               <motion.div
                 key={project.id}
                 variants={itemVariants}
-                layout
                 className="bg-white dark:bg-secondary-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
               >
-                {/* Project Image */}
-                <div className="relative h-48 bg-gradient-to-br from-primary-100 to-secondary-100 dark:from-primary-900 dark:to-secondary-800 overflow-hidden">
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
+                {/* ⭐⭐ SEÇÃO ELEGANTE COM IMAGEM/PLACEHOLDER ⭐⭐ */}
+                <div className="relative h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
+                  {project.imageUrl ? (
+                    // Se tem imagem, mostra a imagem com overlay elegante
+                    <>
+                      <img 
+                        src={project.imageUrl}
+                        alt={project.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      {/* Overlay escuro suave no hover */}
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
+                    </>
+                  ) : (
+                    // Se não tem imagem, mostra o placeholder com gradiente
+                    <div className={`w-full h-full bg-gradient-to-br ${getProjectGradient(project)} flex items-center justify-center`}>
+                      <div className="text-center">
+                        <div className="text-3xl mb-2">
+                          {project.category === 'juridico' && '⚖️'}
+                          {project.category === 'agronegocio' && '🌱'}
+                          {project.category === 'saude' && '🏥'}
+                          {project.category === 'ecommerce' && '🛒'}
+                          {project.category === 'portfolio' && '⚡'}
+                          {!project.category && '💼'}
+                        </div>
+                        <p className="text-sm text-secondary-600 dark:text-secondary-400 font-medium">
+                          {project.category === 'juridico' && 'Plataforma Jurídica'}
+                          {project.category === 'agronegocio' && 'Sistema Agrícola'}
+                          {project.category === 'saude' && 'Sistema de Saúde'}
+                          {project.category === 'ecommerce' && 'E-commerce'}
+                          {project.category === 'portfolio' && 'Portfolio'}
+                          {!project.category && 'Projeto'}
+                        </p>
+                      </div>
+                    </div>
+                  )}
                   
                   {/* Status Badge */}
                   <div className="absolute top-4 left-4">
@@ -119,8 +127,8 @@ export const Projects: React.FC = () => {
                         ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'
                         : 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
                     }`}>
-                      {project.status === 'completed' ? '✅ Completed' : 
-                       project.status === 'in-progress' ? '🔄 In Progress' : '📅 Planned'}
+                      {project.status === 'completed' ? '✅' : 
+                       project.status === 'in-progress' ? '🔄' : '📅'}
                     </span>
                   </div>
 
@@ -137,15 +145,17 @@ export const Projects: React.FC = () => {
                         <FiExternalLink size={16} />
                       </a>
                     )}
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 bg-white/90 dark:bg-secondary-800/90 rounded-lg hover:bg-white dark:hover:bg-secondary-700 transition-colors"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <FiGithub size={16} />
-                    </a>
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 bg-white/90 dark:bg-secondary-800/90 rounded-lg hover:bg-white dark:hover:bg-secondary-700 transition-colors"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <FiGithub size={16} />
+                      </a>
+                    )}
                   </div>
                 </div>
 
@@ -182,23 +192,6 @@ export const Projects: React.FC = () => {
             ))}
           </AnimatePresence>
         </motion.div>
-
-        {/* Empty State */}
-        {filteredProjects.length === 0 && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-center py-12"
-          >
-            <FiFilter size={48} className="mx-auto text-secondary-400 mb-4" />
-            <h3 className="text-xl font-semibold text-secondary-600 dark:text-secondary-400 mb-2">
-              No projects found
-            </h3>
-            <p className="text-secondary-500 dark:text-secondary-500">
-              Try selecting a different category
-            </p>
-          </motion.div>
-        )}
       </div>
 
       {/* Project Modal */}
@@ -218,8 +211,15 @@ export const Projects: React.FC = () => {
               className="bg-white dark:bg-secondary-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Modal Header */}
-              <div className="relative h-64 bg-gradient-to-br from-primary-100 to-secondary-100 dark:from-primary-900 dark:to-secondary-800">
+              {/* Modal Header - Também mostra imagem se disponível */}
+              <div className="relative h-64 bg-gradient-to-br from-primary-100 to-secondary-100 dark:from-primary-900 dark:to-secondary-800 overflow-hidden">
+                {selectedProjectData.imageUrl && (
+                  <img 
+                    src={selectedProjectData.imageUrl}
+                    alt={selectedProjectData.title}
+                    className="w-full h-full object-cover"
+                  />
+                )}
                 <button
                   onClick={() => setSelectedProject(null)}
                   className="absolute top-4 right-4 p-2 bg-white/90 dark:bg-secondary-800/90 rounded-lg hover:bg-white dark:hover:bg-secondary-700 transition-colors"
@@ -243,10 +243,8 @@ export const Projects: React.FC = () => {
                           ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'
                           : 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
                       }`}>
-                        {selectedProjectData.status}
-                      </span>
-                      <span className="px-3 py-1 bg-secondary-100 dark:bg-secondary-700 text-secondary-700 dark:text-secondary-300 rounded-full text-sm font-medium">
-                        {selectedProjectData.category}
+                        {selectedProjectData.status === 'completed' ? '✅' : 
+                         selectedProjectData.status === 'in-progress' ? '🔄' : '📅'}
                       </span>
                     </div>
                   </div>
@@ -260,18 +258,20 @@ export const Projects: React.FC = () => {
                         className="flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors"
                       >
                         <FiExternalLink className="mr-2" />
-                        Live Demo
+                        Ver Projeto
                       </a>
                     )}
-                    <a
-                      href={selectedProjectData.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center px-6 py-3 bg-secondary-200 hover:bg-secondary-300 dark:bg-secondary-700 dark:hover:bg-secondary-600 text-secondary-800 dark:text-secondary-200 rounded-lg transition-colors"
-                    >
-                      <FiGithub className="mr-2" />
-                      Code
-                    </a>
+                    {selectedProjectData.githubUrl && (
+                      <a
+                        href={selectedProjectData.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center px-6 py-3 bg-secondary-200 hover:bg-secondary-300 dark:bg-secondary-700 dark:hover:bg-secondary-600 text-secondary-800 dark:text-secondary-200 rounded-lg transition-colors"
+                      >
+                        <FiGithub className="mr-2" />
+                        Código
+                      </a>
+                    )}
                   </div>
                 </div>
 
@@ -281,7 +281,7 @@ export const Projects: React.FC = () => {
 
                 <div>
                   <h4 className="text-lg font-semibold text-secondary-900 dark:text-white mb-4">
-                    Technologies Used
+                    Tecnologias Utilizadas
                   </h4>
                   <div className="flex flex-wrap gap-3">
                     {selectedProjectData.technologies.map((tech, index) => (

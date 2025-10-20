@@ -105,30 +105,30 @@ export const Hero: React.FC = () => {
            {/* Photo Container */}
             <div className="relative bg-white rounded-2xl p-2 shadow-xl">
               <div className="w-80 h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-xl flex items-center justify-center overflow-hidden">
-                {/* Sua Foto */}
+
                 <img 
-                  src="src\assets\img\1759463205265.jpg" 
-                  alt="João Gualberto - Software Engineer"
-                  className="w-full h-full object-cover rounded-xl"
-                />
+              src="/assets/img/avatar.jpeg" 
+              alt="João Gualberto - Software Engineer"
+              className="w-full h-full object-cover rounded-xl"
+            />
               </div>
             </div>
 
               {/* Floating Elements */}
               <motion.div
-                className="absolute -top-4 -right-4 w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center shadow-lg"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute -top-2 -right-2 w-12 h-12 bg-yellow-100/80 dark:bg-yellow-900/40 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm"
+                animate={{ y: [0, -5, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               >
-                <span className="text-2xl">⚡</span>
+                <span className="text-lg">⚡</span>
               </motion.div>
-              
+
               <motion.div
-                className="absolute -bottom-4 -left-4 w-16 h-16 bg-green-100 rounded-full flex items-center justify-center shadow-lg"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+                className="absolute -bottom-2 -left-2 w-10 h-10 bg-green-100/80 dark:bg-green-900/40 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm"
+                animate={{ y: [0, 5, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               >
-                <span className="text-xl">🚀</span>
+                <span className="text-md">🚀</span>
               </motion.div>
             </div>
           </motion.div>

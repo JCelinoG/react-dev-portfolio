@@ -8,7 +8,7 @@ export interface Project {
   demoUrl?: string;
   githubUrl: string;
   featured: boolean;
-  category: 'frontend' | 'fullstack' | 'mobile' | 'freelance';
+  category: 'juridico' | 'agronegocio' | 'saude' | 'gestao' | 'ecommerce' | 'portfolio';
   status: 'completed' | 'in-progress' | 'planned';
 }
 

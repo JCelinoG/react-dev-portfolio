@@ -15,29 +15,122 @@ const PortfolioContext = createContext<PortfolioContextType | undefined>(undefin
 const mockProjects: Project[] = [
   {
     id: '1',
-    title: 'Legal Platform',
-    description: 'Comprehensive legal management platform built with Next.js and TypeScript',
-    descriptionPt: 'Plataforma jurídica completa desenvolvida com Next.js e TypeScript',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Ant Design', 'Node.js'],
-    imageUrl: '/projects/legal-platform.jpg',
-    demoUrl: 'https://legal-platform.demo.com',
-    githubUrl: 'https://github.com/JCelinoG/legal-platform',
+    title: 'SingixMarket - Sales Management System',
+    description: 'System for managing sales, customers, and products with secure authentication and a modern interface.',
+    descriptionPt: 'Sistema para gestão de vendas, clientes e produtos com autenticação segura e interface moderna.',
+    technologies: [
+      'Java',
+      'Spring Boot',
+      'Angular',
+      'TypeScript', 
+      'Spring Security',
+      'JWT',
+      'MySQL',
+      'Tailwind CSS',
+      'JUnit',
+      'Docker'
+    ],
+    imageUrl: '/assets/img/projects/git.png',
+    demoUrl: '', 
+    githubUrl: 'https://github.com/JCelinoG/singix-market',
     featured: true,
-    category: 'fullstack',
-    status: 'completed',
+    category: 'ecommerce',
+    status: 'in-progress'
+  },
+   {
+    id: '2',
+    title: 'Developer Portfolio',
+    description: 'Modern and responsive portfolio developed with React, TypeScript, and Tailwind CSS. Clean design with dark mode, internationalization, and smooth animations.',
+    descriptionPt: 'Portfólio moderno e responsivo desenvolvido com React, TypeScript e Tailwind CSS. Design limpo com modo escuro, internacionalização e animações fluidas.',
+    technologies: [
+      'React',
+      'TypeScript', 
+      'Tailwind CSS',
+      'Framer Motion',
+      'Vite',
+      'React Icons',
+      'React Hook Form',
+      'Context API',
+      'Responsive Design',
+      'Dark Mode',
+      'Internationalization'
+    ],
+    imageUrl: '/assets/img/projects/react-portfolio.PNG',
+    demoUrl: '', 
+    githubUrl: 'https://github.com/JCelinoG/react-dev-portfolio',
+    featured: true,
+    category: 'portfolio',
+    status: 'completed'
+  },
+   {
+  id: '3',
+  title: 'Dra. Natalia Beltrami',
+  description: 'Maintenance and optimization of professional landing page for gynecologist, implementing performance improvements, SEO, and user experience enhancements.',
+  descriptionPt: 'Manutenção e otimização da landing page profissional para ginecologista, implementando melhorias de performance, SEO e experiência do usuário.',
+  technologies: ['WordPress', 'JavaScript','Elementor', 'CSS', 'SEO'],
+    imageUrl: '/assets/img/projects/natalia.png',
+  demoUrl: 'https://dranataliabeltrami.com.br/',
+  githubUrl: '', 
+  featured: true,
+  category: 'saude',
+  status: 'completed'
+},
+  {
+    id: '4',
+    title: 'Defendy - Plataforma Jurídica',
+    description: 'Comprehensive legal platform for finding specialist lawyers.',
+    descriptionPt: 'Plataforma jurídica completa para busca de advogados especialistas',
+    technologies: ['Next.js', 'TypeScript', 'AntDesign'],
+    imageUrl: '/assets/img/projects/defendyLogo.png',
+    demoUrl: 'https://defendy.com.br',
+    githubUrl: '', 
+    featured: true,
+    category: 'juridico',
+    status: 'completed'
+    
+  },
+  
+   {
+    id: '6',
+    title: 'SMGeo - Plataforma Socioambiental',
+    description: 'Geographic Monitoring System for registration, analysis, and socio-environmental monitoring of suppliers in agribusiness.',
+    descriptionPt: 'Sistema de Monitoramento Geográfico para cadastro, análise e monitoramento socioambiental de fornecedores no agronegócio.',
+    technologies: ['React', 'JavaScript', 'TypeScript', 'Styled Components', 'GIS', 'Google Cloud', 'Leaflet', 'Mapbox'],
+    imageUrl: '/assets/img/projects/smgeo.PNG',
+
+    demoUrl: 'https://niceplanet.com.br/smgeo',
+    githubUrl: '',
+    featured: true,
+    category: 'agronegocio',
+    status: 'completed'
+  },
+   {
+    id: '7',
+    title: 'SMGeo Consulta - Integração Socioambiental',
+    description: 'Platform that connects invoices from agro-industries to supplier farms, automating the delivery of socio-environmental information to buyers, retailers, and tanneries.',
+    descriptionPt: 'Plataforma que conecta notas fiscais de agroindústrias a fazendas fornecedoras, automatizando a entrega de informações socioambientais para compradores, varejistas e curtumes.',
+    technologies: ['React', 'TypeScript', 'Styled Components', 'REST API'],
+    imageUrl: '/assets/img/projects/smgeo-consulta.png',
+    demoUrl: 'https://niceplanet.com.br/smgeo-consulta',
+    githubUrl: '',
+    featured: true,
+    category: 'agronegocio',
+    status: 'completed'
   },
   {
-    id: '2',
-    title: 'Agribusiness Management',
-    description: 'Web application for traceability and socio-environmental compliance in agribusiness',
-    descriptionPt: 'Aplicação web para rastreabilidade e conformidade socioambiental no agronegócio',
-    technologies: ['React', 'JavaScript', 'Styled Components', 'GIS', 'Google Cloud'],
-    imageUrl: '/projects/agribusiness.jpg',
-    githubUrl: 'https://github.com/JCelinoG/agribusiness-app',
+    id: '8',
+    title: 'Projuris Empresas',
+    description: 'Legal platform for corporate legal management and compliance.',
+    descriptionPt: 'Plataforma legal para gestão jurídica empresarial e compliance.',
+    technologies: ['Angular', 'TypeScript', 'Bootstrap', 'SCSS'],
+    imageUrl: '/assets/img/projects/projuris-logo.png',
+    demoUrl: 'https://www.projuris.com.br/empresas/',
+    githubUrl: '',
     featured: true,
-    category: 'frontend',
+    category: 'juridico',
     status: 'completed'
-  }
+  },
+  
 ];
 
 const mockExperiences: Experience[] = [

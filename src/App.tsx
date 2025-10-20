@@ -15,13 +15,13 @@ const Contact = lazy(() => import('./components/Contact/Contact').then(module =>
 
 const SimpleSEO: React.FC = () => {
   React.useEffect(() => {
-    document.title = 'João Gualberto - Full-Stack Developer';
+    document.title = 'João Celino - Software Engineer';
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (!metaDescription) {
       const meta = document.createElement('meta');
       meta.name = 'description';
-      meta.content = 'Full-Stack Developer with 5+ years of experience creating robust web solutions. Specialized in React, Angular, TypeScript, and Python.';
+      meta.content = 'Full-Stack Developer with 5+ years of experience creating robust web solutions. Specialized in React, Angular, TypeScript, and Java.';
       document.head.appendChild(meta);
     }
   }, []);
