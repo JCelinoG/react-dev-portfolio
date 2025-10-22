@@ -115,6 +115,18 @@ modern_tech: {
 commitment: {
   pt: "Compromisso",
   en: "Commitment" 
+},
+current:{
+  pt: "Atual",
+  en: "Current"
+},
+onsiteWorkmode:{
+  pt:"Presencial",
+  en:"On-site",
+},
+remoteWorkmode:{
+  pt:"Remoto",
+  en:"Remote",
 }
 
 };
