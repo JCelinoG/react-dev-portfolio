@@ -49,8 +49,8 @@ hero: {
     en: 'My journey through Software Development'
   },
   currentPosition: {
-    pt: 'Posição Atual',
-    en: 'Current Position'
+    pt: 'Posição atual',
+    en: 'Current position'
   },
   viewDetails: {
     pt: 'Ver Detalhes',
@@ -116,19 +116,22 @@ commitment: {
   pt: "Compromisso",
   en: "Commitment" 
 },
-current:{
-  pt: "Atual",
-  en: "Current"
-},
-onsiteWorkmode:{
-  pt:"Presencial",
-  en:"On-site",
-},
-remoteWorkmode:{
-  pt:"Remoto",
-  en:"Remote",
-}
-
+ workMode: {
+    pt: 'Modalidade',
+    en: 'Work Mode'
+  },
+  remote: {
+    pt: 'Remoto',
+    en: 'Remote'
+  },
+  'on-site': {
+    pt: 'Presencial', 
+    en: 'On-site'
+  },
+  hybrid: {
+    pt: 'Híbrido',
+    en: 'Hybrid'
+  }
 };
 
 class I18n {

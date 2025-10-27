@@ -5,8 +5,14 @@ import { useUserData } from '../../hooks/useUserData';
 import { FiCalendar, FiMapPin, FiExternalLink } from 'react-icons/fi';
 
 export const Experience: React.FC = () => {
-  const { t } = useApp();
+  const { t, language } = useApp();
   const { experiences } = useUserData();
+
+  type WorkModeKey = 'remote' | 'on-site' | 'hybrid';
+
+  const translateWorkMode = (workMode: string) => {
+    return t(workMode as WorkModeKey) || workMode;
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -30,13 +36,15 @@ export const Experience: React.FC = () => {
   };
 
   return (
+    
     <section id="experience" className="section-padding bg-white dark:bg-secondary-900">
       <div className="container-custom">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12" 
+          className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 dark:text-white mb-4">
             {t('experience') || 'Professional Experience'}
@@ -46,90 +54,84 @@ export const Experience: React.FC = () => {
           </p>
         </motion.div>
 
+        {/* Timeline */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="relative"
+          className="relative max-w-4xl mx-auto"
         >
           {/* Timeline line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-400 to-primary-600 transform -translate-x-1/2" />
+          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-400 to-primary-600 transform -translate-x-1/2" />
 
           {experiences.map((experience, index) => (
             <motion.div
               key={experience.id}
               variants={itemVariants}
-              className={`relative flex items-center mb-10 ${ 
+              className={`relative flex items-center mb-12 ${
                 index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               }`}
             >
               {/* Timeline dot */}
-              <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-primary-600 rounded-full border-3 border-white dark:border-secondary-900 transform -translate-x-1/2 z-10" />
+              <div className="absolute left-6 md:left-1/2 w-4 h-4 bg-primary-600 rounded-full border-4 border-white dark:border-secondary-900 transform -translate-x-1/2 z-10" />
 
               {/* Content */}
-              <div className={`ml-10 md:ml-0 md:w-5/12 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
+              <div className={`ml-12 md:ml-0 md:w-5/12 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="bg-white dark:bg-secondary-800 rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300 border border-secondary-100 dark:border-secondary-700" // Reduzi o padding e border-radius
+                  className="bg-white dark:bg-secondary-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-secondary-100 dark:border-secondary-700"
                 >
                   {/* Current job badge */}
                   {experience.current && (
-                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 mb-2">
-                      🔥{t('current')}
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 mb-3">
+                      🔥 {t('currentPosition') || 'Current Position'}
                     </span>
                   )}
 
                   {/* Company and position */}
-                  <div className="flex items-start justify-between mb-2">
+                  <div className="flex items-start justify-between mb-3">
                     <div>
-                      <h3 className="text-lg font-bold text-secondary-900 dark:text-white">
-                        {experience.position}
+                      <h3 className="text-xl font-bold text-secondary-900 dark:text-white">
+                        {language === 'pt' ? experience.positionPt : experience.position}
                       </h3>
-                      <p className="text-primary-600 dark:text-primary-400 font-medium">
+                      <p className="text-lg text-primary-600 dark:text-primary-400 font-medium">
                         {experience.company}
                       </p>
                     </div>
-                    <div className="flex items-center space-x-1 text-secondary-500 dark:text-secondary-400">
+                  </div>
+
+                  {/* Period and Location */}
+                  <div className="flex items-center space-x-4 text-secondary-500 dark:text-secondary-400 mb-4">
+                    <div className="flex items-center space-x-1">
+                      <FiCalendar size={14} />
+                      <span className="text-sm">
+                        {language === 'pt' ? experience.periodPt : experience.period}
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-1">
                       <FiMapPin size={14} />
-                      <span className="text-xs">{experience.workMode}</span>
+                      <span className="text-sm">
+                        {translateWorkMode(experience.workMode)}
+                      </span>
                     </div>
                   </div>
 
-                  {/* Period */}
-                  <div className="flex items-center text-secondary-500 dark:text-secondary-400 mb-3">
-                    <FiCalendar className="mr-1" size={12} />
-                    <span className="text-xs">{experience.period}</span>
-                  </div>
-
                   {/* Description */}
-                  <p className="text-secondary-600 dark:text-secondary-300 mb-3 leading-relaxed text-base">
-                    {experience.description}
+                  <p className="text-secondary-600 dark:text-secondary-300 mb-4 leading-relaxed">
+                    {language === 'pt' ? experience.descriptionPt : experience.description}
                   </p>
 
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-1">
+                  <div className="flex flex-wrap gap-2">
                     {experience.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-xs font-medium"
+                        className="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-xs font-medium"
                       >
                         {tech}
                       </span>
                     ))}
-                  </div>
-
-                  {/* Employment type badge */}
-                  <div className="mt-3 pt-3 border-t border-secondary-100 dark:border-secondary-700">
-                    <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
-                      experience.type === 'full-time' 
-                        ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
-                        : experience.type === 'freelance'
-                        ? 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200'
-                        : 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200'
-                    }`}>
-                      {experience.type.charAt(0).toUpperCase() + experience.type.slice(1).replace('-', ' ')}
-                    </span>
                   </div>
                 </motion.div>
               </div>

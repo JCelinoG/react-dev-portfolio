@@ -24,7 +24,7 @@ export interface Experience {
   technologies: string[];
   current?: boolean;
   type: 'full-time' | 'part-time' | 'freelance' | 'internship' | 'education';
-  workMode: 'Remote' | 'On-site'
+  workMode: 'remote' | 'on-site' | 'hybrid';
 }
 
 export interface Skill {

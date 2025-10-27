@@ -146,7 +146,7 @@ const mockExperiences: Experience[] = [
     technologies: ['Teaching', 'Mentoring', 'Programming Logic', 'Front-end', 'Back-end', 'Databases'],
     current: true,
     type: 'full-time',
-    workMode: 'On-site'
+    workMode: 'on-site' 
   },
   {
     id: '2',
@@ -160,7 +160,7 @@ const mockExperiences: Experience[] = [
     technologies: ['Angular', 'Next.js', 'React', 'TypeScript', 'WordPress', 'Tailwind CSS'],
     current: true,
     type: 'freelance',
-    workMode: 'Remote'
+    workMode: 'remote' 
   },
   {
     id: '3',
@@ -174,7 +174,8 @@ const mockExperiences: Experience[] = [
     technologies: ['React', 'JavaScript', 'TypeScript', 'Styled Components', 'GIS', 'Google Cloud'],
     current: false,
     type: 'full-time',
-    workMode: 'Remote'
+    workMode: 'remote' 
+
   },
   {
     id: '4',
@@ -188,7 +189,7 @@ const mockExperiences: Experience[] = [
     technologies: ['Angular', 'TypeScript', 'SCSS', 'Docker', 'Cypress', 'Jest'],
     current: false,
     type: 'full-time',
-    workMode: 'Remote'
+    workMode: 'remote' 
   },
   {
   id: '5',
@@ -202,7 +203,7 @@ const mockExperiences: Experience[] = [
   technologies: ['Python', 'Django', 'C++', 'Arduino', 'Bootstrap', 'MySQL', 'Doctrine', 'Git', 'Figma'],
   current: false,
   type: 'internship',
-  workMode: 'On-site'
+  workMode: 'on-site' 
 },
 {
   id: '6',
@@ -216,7 +217,7 @@ const mockExperiences: Experience[] = [
   technologies: ['Angular 8/9', 'Spring Framework', 'Kotlin', 'Bootstrap', 'PostgreSQL'],
   current: false,
   type: 'internship',
-  workMode: 'On-site'
+  workMode: 'on-site' 
 }
 ];
 const mockSkills: Skill[] = [
