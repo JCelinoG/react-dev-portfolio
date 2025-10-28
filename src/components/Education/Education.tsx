@@ -8,6 +8,7 @@ interface EducationItem {
   degree: string;
   degreePt: string;
   institution: string;
+  institutionPt: string,
   period: string;
   periodPt: string;
   status: 'completed' | 'in-progress' | 'planned';
@@ -26,6 +27,7 @@ export const Education: React.FC = () => {
       id: '1',
       degree: 'MBA in Software Engineering',
       degreePt: 'MBA em Engenharia de Software',
+      institutionPt: 'Universidade de São Paulo (USP/Esalq)',
       institution: 'University of São Paulo (USP/Esalq)',
       period: '2024 - 2025',
       periodPt: '2024 - 2025',
@@ -41,6 +43,7 @@ export const Education: React.FC = () => {
       degree: 'Bachelor in Computer Science',
       degreePt: 'Bacharelado em Ciência da Computação',
       institution: 'Federal University of Tocantins (UFT)',
+      institutionPt: 'Universidade Federal do Tocantins (UFT)',
       period: '2018 - 2022',
       periodPt: '2018 - 2022',
       status: 'completed',
@@ -55,6 +58,7 @@ export const Education: React.FC = () => {
       degree: 'Technical Course in Computer Networks and Programming',
       degreePt: 'Curso Técnico em Redes de Computadores e Programação',
       institution: 'Military Police School of Tocantins',
+      institutionPt: 'Colégio da Polícia Militar - (CPMTO)',
       period: '2013 - 2015',
       periodPt: '2013 - 2015',
       status: 'completed',
@@ -62,17 +66,28 @@ export const Education: React.FC = () => {
       descriptionPt: 'Formação técnica em redes de computadores, fundamentos de programação e infraestrutura de TI.',
       location: 'Tocantins, Brazil',
       icon: '🔧',
-      courses: ['Networking', 'Programming Logic', 'Hardware', 'Operating Systems']
+      courses: ['Networking', 'Programming Logic', 'Hardware', 'Web Development']
     }
   ];
 
   const getStatusBadge = (status: EducationItem['status']) => {
-    const statusConfig = {
-      completed: { label: '✅', labelPt: '✅', color: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' },
-      'in-progress': { label: '🔄', labelPt: '🔄', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200' },
-      planned: { label: '📅', labelPt: '📅', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200' }
-    };
-    
+  const statusConfig = {
+    completed: {
+      label: '✅ Completed',
+      labelPt: '✅ Concluído',
+      color: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
+    },
+    'in-progress': {
+      label: '🔄 In Progress',
+      labelPt: '🔄 Em andamento',
+      color: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
+    },
+    planned: {
+      label: '📅 Planned',
+      labelPt: '📅 Planejado',
+      color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'
+    }
+  };
     const config = statusConfig[status];
     return (
       <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${config.color}`}>
@@ -159,7 +174,7 @@ export const Education: React.FC = () => {
                           {language === 'pt' ? education.degreePt : education.degree}
                         </h3>
                         <p className="text-primary-600 dark:text-primary-400 font-medium">
-                          {education.institution}
+                          {language === 'pt' ? education.institutionPt : education.institution}
                         </p>
                       </div>
                     </div>
@@ -190,7 +205,7 @@ export const Education: React.FC = () => {
                     <div>
                       <div className="flex items-center text-secondary-700 dark:text-secondary-300 mb-2">
                         <FiBook className="mr-2" size={14} />
-                        <span className="text-sm font-medium">Key Courses</span>
+                        <span className="text-sm font-medium">{t('key_courses')}</span>
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {education.courses.map((course, courseIndex) => (
