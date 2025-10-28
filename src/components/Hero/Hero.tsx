@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useApp } from '../../contexts/AppContext';
 import { Button } from '../ui/Button';
 import { FiDownload, FiArrowRight } from 'react-icons/fi';
+import { FaAward, FaCode, FaCogs, FaTools } from 'react-icons/fa';
 
 export const Hero: React.FC = () => {
   const { t } = useApp();
@@ -120,7 +121,7 @@ export const Hero: React.FC = () => {
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               >
-                <span className="text-lg">⚡</span>
+                <span className="text-lg"><FaCode /></span>
               </motion.div>
 
               <motion.div
