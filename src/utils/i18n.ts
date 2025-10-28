@@ -192,8 +192,14 @@ commitment: {
     pt:'por',
     en: 'by'
   },
-  
-
+  'footer_phrase': {
+    pt: 'Desenvolvedor de software e instrutor apaixonado por criar experiências digitais incríveis',
+    en: 'Software Developer & Instructor passionate about creating amazing digital experiences'
+  },
+  'key_courses': {
+  pt: 'Principais áreas',
+  en: 'Key Courses'
+  }
 };
 
 class I18n {

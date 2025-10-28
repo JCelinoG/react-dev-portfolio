@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
               João Celino Gualberto
             </h3>
             <p className="text-secondary-300 max-w-md mx-auto mb-6">
-              Software Developer & Instructor passionate about creating amazing digital experiences
+              {t('footer_phrase')}
             </p>
             
             {/* Social Links */}
