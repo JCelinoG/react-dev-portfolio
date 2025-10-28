@@ -131,7 +131,69 @@ commitment: {
   hybrid: {
     pt: 'Híbrido',
     en: 'Hybrid'
-  }
+  },
+  'fullname':{
+    pt: 'Nome completo',
+    en: 'Full Name'
+  },
+  'your_fullname':{
+    pt: 'Seu nome completo',
+    en: 'Your full name'
+  },
+  'email_adress':{
+    pt: 'Seu e-mail',
+    en: 'Email Address'
+  },
+  'your_email':{
+    pt: 'seu.email@exemple.com',
+    en: 'your.email@example.com'
+  },
+  'subject':{
+    pt:'Assunto',
+    en:'Subject'
+  },
+   'message':{
+    pt:'Mensagem',
+    en:'Message'
+  },
+  'about_project':{
+    pt:'Me fale sobre seu projeto...',
+    en:'Tell me about your project...'
+  },
+  'whats_about':{
+    pt:'Do que se trata?',
+    en: 'What\'s this about?'
+  },
+   'sending':{
+    pt:'Enviando...',
+    en: 'Sending...'
+  },
+   'send_message':{
+    pt:'Enviar Mensagem',
+    en: 'Send Message'
+  },
+   'location':{
+    pt:'Localização',
+    en: 'Location'
+  },
+  'phone':{
+    pt:'Telefone',
+    en: 'Phone'
+  },
+    'made':{
+    pt:'Feito com',
+    en: 'Made with'
+  },
+    'and':{
+    pt:'e',
+    en: 'and'
+  },
+    'by':{
+    pt:'por',
+    en: 'by'
+  },
+  
+
 };
 
 class I18n {

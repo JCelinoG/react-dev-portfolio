@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useApp } from '../../contexts/AppContext';
-import { FiMail, FiPhone, FiMapPin, FiSend, FiLinkedin, FiGithub, FiMessageCircle, FiCheck, FiX } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiSend, FiLinkedin, FiGithub, FiCheck, FiX } from 'react-icons/fi';
+import { FaWhatsapp } from "react-icons/fa";
 import emailjs from '@emailjs/browser';
 
 export const Contact: React.FC = () => {
@@ -90,14 +91,14 @@ export const Contact: React.FC = () => {
     },
     {
       icon: FiPhone,
-      label: 'Phone',
+      label: t('phone'),
       value: '+55 63 99277-3730',
       href: 'tel:+5563992773730'
     },
     {
       icon: FiMapPin,
-      label: 'Location',
-      value: 'Brazil - Remote',
+      label: t('location'),
+      value: 'Brazil',
       href: 'https://maps.app.goo.gl/u7vovpKA1zkKPAnz6'
     }
   ];
@@ -116,7 +117,7 @@ export const Contact: React.FC = () => {
       color: 'hover:text-gray-700 dark:hover:text-white'
     },
     {
-      icon: FiMessageCircle,
+      icon: FaWhatsapp,
       label: 'WhatsApp',
       href: 'https://wa.me/5563992773730',
       color: 'hover:text-green-600'
@@ -231,7 +232,7 @@ export const Contact: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2">
-                    Full Name *
+                     {t('fullname')} *
                   </label>
                   <input
                     type="text"
@@ -241,12 +242,12 @@ export const Contact: React.FC = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-white dark:bg-secondary-700 border border-secondary-200 dark:border-secondary-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
-                    placeholder="Your full name"
+                    placeholder={t('your_fullname')}
                   />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2">
-                    Email Address *
+                     {t('email_adress')}  *
                   </label>
                   <input
                     type="email"
@@ -256,14 +257,14 @@ export const Contact: React.FC = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-white dark:bg-secondary-700 border border-secondary-200 dark:border-secondary-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
-                    placeholder="your.email@example.com"
+                    placeholder={t('your_email')}
                   />
                 </div>
               </div>
 
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2">
-                  Subject *
+                  {t('subject')} *
                 </label>
                 <input
                   type="text"
@@ -273,13 +274,13 @@ export const Contact: React.FC = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-white dark:bg-secondary-700 border border-secondary-200 dark:border-secondary-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
-                  placeholder="What's this about?"
+                  placeholder={t('whats_about')}
                 />
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-2">
-                  Message *
+                  {t('message')}  *
                 </label>
                 <textarea
                   id="message"
@@ -289,7 +290,7 @@ export const Contact: React.FC = () => {
                   required
                   rows={6}
                   className="w-full px-4 py-3 bg-white dark:bg-secondary-700 border border-secondary-200 dark:border-secondary-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 resize-none"
-                  placeholder="Tell me about your project..."
+                  placeholder={t('about_project')}
                 />
               </div>
 
@@ -303,12 +304,12 @@ export const Contact: React.FC = () => {
                 {isSubmitting ? (
                   <>
                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    <span>Enviando...</span>
+                    <span>{t('sending')}</span>
                   </>
                 ) : (
                   <>
                     <FiSend size={18} />
-                    <span>Send Message</span>
+                    <span>{t('send_message')} </span>
                   </>
                 )}
               </motion.button>

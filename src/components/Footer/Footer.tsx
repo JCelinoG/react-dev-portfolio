@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
               João Celino Gualberto
             </h3>
             <p className="text-secondary-300 max-w-md mx-auto mb-6">
-              Full-Stack Developer & Instructor passionate about creating amazing digital experiences
+              Software Developer & Instructor passionate about creating amazing digital experiences
             </p>
             
             {/* Social Links */}
@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
               {[
                 { icon: FiGithub, href: 'https://github.com/JCelinoG', label: 'GitHub' },
                 { icon: FiLinkedin, href: 'https://www.linkedin.com/in/joao-celino-gualberto/', label: 'LinkedIn' },
-                { icon: FiMail, href: 'mailto:celinogualberto@gmail.com', label: 'Email' }
+                { icon: FiMail, href: 'mailto:joaocg14@gmail.com', label: 'Email' }
               ].map((social, index) => (
                 <motion.a
                   key={index}
@@ -57,16 +57,31 @@ export const Footer: React.FC = () => {
           >
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="flex items-center space-x-2 text-secondary-400">
-                <span>Made with</span>
+                <span>{t('made')}</span>
                 <motion.div
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 1, repeat: Infinity }}
                 >
                   <FiHeart className="text-red-500" size={16} />
                 </motion.div>
-                <span>and</span>
-                <FiCoffee className="text-amber-500" size={16} />
-                <span>by João Gualberto</span>
+                <span>{t('and')}</span>
+                <motion.div
+                animate={{ rotate: [-5, 5, -5] }}
+                transition={{
+                  duration: 0.8,           
+                  repeat: Infinity,     
+                  repeatType: 'mirror', 
+                  ease: 'easeInOut'      
+                }}
+            >
+  <FiCoffee className="text-amber-500" size={16} />
+</motion.div>
+
+
+
+
+
+                <span>{t('by')} João Gualberto</span>
               </div>
               
               <div className="text-secondary-400 text-sm">
