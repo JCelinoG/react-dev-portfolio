@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { useApp } from '../../contexts/AppContext';
 import { Button } from '../ui/Button';
 import { FiDownload, FiArrowRight } from 'react-icons/fi';
-import { FaAward, FaCode, FaCogs, FaTools } from 'react-icons/fa';
+import { FaCode} from 'react-icons/fa';
 
 export const Hero: React.FC = () => {
-  const { t } = useApp();
+  const { t, language } = useApp()
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -34,6 +34,11 @@ export const Hero: React.FC = () => {
   { value: '💻', label: t('modern_tech') },
   { value: '100%', label: t('commitment') }
 ]
+
+const cvFile =
+    language === 'pt'
+      ? '/Joao_Celino_Gualberto_Resume_PT.pdf'
+      : '/Joao_Celino_Gualberto_Resume.pdf';
 
   return (
     <section id="hero" className="min-h-screen flex items-center pt-20 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
@@ -76,7 +81,7 @@ export const Hero: React.FC = () => {
               <Button
                 variant="outline"
                 size="lg"
-                href="/Joao_Celino_Gualberto_Resume.pdf"
+                href={cvFile} 
                 download
               >
                 {t('downloadCV')}

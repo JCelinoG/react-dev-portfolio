@@ -74,13 +74,8 @@ export const Footer: React.FC = () => {
                   ease: 'easeInOut'      
                 }}
             >
-  <FiCoffee className="text-amber-500" size={16} />
-</motion.div>
-
-
-
-
-
+                <FiCoffee className="text-amber-500" size={16} />
+              </motion.div>
                 <span>{t('by')} João Gualberto</span>
               </div>
               

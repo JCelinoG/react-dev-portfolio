@@ -19,12 +19,13 @@ export const Header: React.FC = () => {
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-2"
+            className="flex items-center space-x-2 cursor-pointer"
+            onClick={() => window.location.reload()}
           >
-    <div className="w-10 h-8 bg-gradient-to-r from-primary-600 to-primary-400 rounded-lg flex items-center justify-center">
-  <span className="text-white font-bold text-sm">DEV</span>
-</div>
-<span className="text-xl font-bold text-secondary-900">João Celino</span>
+     <div className="w-10 h-8 bg-gradient-to-r from-primary-600 to-primary-400 rounded-lg flex items-center justify-center">
+          <span className="text-white font-bold text-sm">DEV</span>
+        </div>
+        <span className="text-xl font-bold text-secondary-900">João Celino</span>
           </motion.div>
 
           {/* Navigation */}
