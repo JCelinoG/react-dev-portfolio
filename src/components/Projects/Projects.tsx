@@ -81,21 +81,17 @@ export const Projects: React.FC = () => {
                 variants={itemVariants}
                 className="bg-white dark:bg-secondary-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
               >
-                {/* ⭐⭐ SEÇÃO ELEGANTE COM IMAGEM/PLACEHOLDER ⭐⭐ */}
                 <div className="relative h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
                   {project.imageUrl ? (
-                    // Se tem imagem, mostra a imagem com overlay elegante
                     <>
                       <img 
                         src={project.imageUrl}
                         alt={project.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      {/* Overlay escuro suave no hover */}
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
                     </>
                   ) : (
-                    // Se não tem imagem, mostra o placeholder com gradiente
                     <div className={`w-full h-full bg-gradient-to-br ${getProjectGradient(project)} flex items-center justify-center`}>
                       <div className="text-center">
                         <div className="text-3xl mb-2">
@@ -211,7 +207,6 @@ export const Projects: React.FC = () => {
               className="bg-white dark:bg-secondary-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Modal Header - Também mostra imagem se disponível */}
               <div className="relative h-64 bg-gradient-to-br from-primary-100 to-secondary-100 dark:from-primary-900 dark:to-secondary-800 overflow-hidden">
                 {selectedProjectData.imageUrl && (
                   <img 
@@ -258,7 +253,7 @@ export const Projects: React.FC = () => {
                         className="flex items-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors"
                       >
                         <FiExternalLink className="mr-2" />
-                        Ver Projeto
+                        {t('see_project')}
                       </a>
                     )}
                     {selectedProjectData.githubUrl && (
@@ -269,7 +264,7 @@ export const Projects: React.FC = () => {
                         className="flex items-center px-6 py-3 bg-secondary-200 hover:bg-secondary-300 dark:bg-secondary-700 dark:hover:bg-secondary-600 text-secondary-800 dark:text-secondary-200 rounded-lg transition-colors"
                       >
                         <FiGithub className="mr-2" />
-                        Código
+                        {t('code')}
                       </a>
                     )}
                   </div>
@@ -281,7 +276,7 @@ export const Projects: React.FC = () => {
 
                 <div>
                   <h4 className="text-lg font-semibold text-secondary-900 dark:text-white mb-4">
-                    Tecnologias Utilizadas
+                    {t('technologies')}
                   </h4>
                   <div className="flex flex-wrap gap-3">
                     {selectedProjectData.technologies.map((tech, index) => (

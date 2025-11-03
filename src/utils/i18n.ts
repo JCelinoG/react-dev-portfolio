@@ -199,6 +199,18 @@ commitment: {
   'key_courses': {
   pt: 'Principais áreas',
   en: 'Key Courses'
+  },
+   'see_project':{
+    pt:'Ver Projeto',
+    en:'See Project'
+  },
+   'code':{
+    pt:'Código',
+    en:'Code'
+  },
+   'technologies':{
+    pt:'Tecnologias Utilizadas',
+    en:'Technologies Used'
   }
 };
 
