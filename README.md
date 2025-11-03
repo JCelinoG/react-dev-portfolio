@@ -15,7 +15,7 @@ Modern, responsive portfolio built with React, TypeScript, and Tailwind CSS.
 
 ## 🛠 Tech Stack
 
-- React 18
+- React 19
 - TypeScript
 - Tailwind CSS
 - Framer Motion
@@ -27,3 +27,7 @@ Modern, responsive portfolio built with React, TypeScript, and Tailwind CSS.
 1. **Install dependencies:**
    ```bash
    npm install
+
+2. **Run**
+   ```bash
+   npm run dev
