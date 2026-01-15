@@ -3,10 +3,9 @@ import { motion } from 'framer-motion';
 import { useApp } from '../../contexts/AppContext';
 import { Button } from '../ui/Button';
 import { FiDownload, FiArrowRight } from 'react-icons/fi';
-import { FaCode} from 'react-icons/fa';
 
 export const Hero: React.FC = () => {
-  const { t, language } = useApp()
+  const { t } = useApp();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -30,15 +29,10 @@ export const Hero: React.FC = () => {
   };
 
   const getStats = () => [
-  { value: '5+', label: t('years_exp') },
+  { value: '7+', label: t('years_exp') },
   { value: '💻', label: t('modern_tech') },
   { value: '100%', label: t('commitment') }
 ]
-
-const cvFile =
-    language === 'pt'
-      ? '/Joao_Celino_Gualberto_Resume_PT.pdf'
-      : '/Joao_Celino_Gualberto_Resume.pdf';
 
   return (
     <section id="hero" className="min-h-screen flex items-center pt-20 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
@@ -81,7 +75,7 @@ const cvFile =
               <Button
                 variant="outline"
                 size="lg"
-                href={cvFile} 
+                href="/Joao_Celino_Gualberto_Resume.pdf"
                 download
               >
                 {t('downloadCV')}
@@ -126,7 +120,7 @@ const cvFile =
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               >
-                <span className="text-lg"><FaCode /></span>
+                <span className="text-lg">⚡</span>
               </motion.div>
 
               <motion.div

@@ -21,7 +21,7 @@ const SimpleSEO: React.FC = () => {
     if (!metaDescription) {
       const meta = document.createElement('meta');
       meta.name = 'description';
-      meta.content = 'Full-Stack Developer with 5+ years of experience creating robust web solutions. Specialized in React, Angular, TypeScript, and Java.';
+      meta.content = 'Full-Stack Developer with 7+ years of experience creating robust web solutions. Specialized in React, Angular, TypeScript, and Java.';
       document.head.appendChild(meta);
     }
   }, []);
