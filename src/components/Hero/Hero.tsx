@@ -5,7 +5,7 @@ import { Button } from '../ui/Button';
 import { FiDownload, FiArrowRight } from 'react-icons/fi';
 
 export const Hero: React.FC = () => {
-  const { t } = useApp();
+  const { t, language } = useApp()
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -34,6 +34,11 @@ export const Hero: React.FC = () => {
   { value: '100%', label: t('commitment') }
 ]
 
+const cvFile =
+    language === 'pt'
+      ? '/Joao_Celino_Gualberto_Resume_PT.pdf'
+      : '/Joao_Celino_Gualberto_Resume.pdf';
+    
   return (
     <section id="hero" className="min-h-screen flex items-center pt-20 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
       <div className="container-custom">
@@ -75,7 +80,7 @@ export const Hero: React.FC = () => {
               <Button
                 variant="outline"
                 size="lg"
-                href="/Joao_Celino_Gualberto_Resume.pdf"
+                href={cvFile} 
                 download
               >
                 {t('downloadCV')}
