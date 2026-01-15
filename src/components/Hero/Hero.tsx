@@ -116,7 +116,7 @@ export const Hero: React.FC = () => {
 
               {/* Floating Elements */}
               <motion.div
-                className="absolute -top-2 -right-2 w-12 h-12 bg-yellow-100/80 dark:bg-yellow-900/40 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm"
+                className="absolute -top-2 -right-2 w-12 h-12 bg-yellow-100/80  dark:bg-yellow-900/40 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm"
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               >
