@@ -101,8 +101,8 @@ welcome:{
   en: "welcome"
 },
 shortBio:{
-   pt: "Engenheiro de Software com 5+ anos de experiência criando soluções web robustas e de alta performance. Especializado em React, Angular, TypeScript e Java.",
-  en: "Software Engineer with 5+ years of experience building robust and high-performance web solutions. Specialized in React, Angular, TypeScript and Java."
+   pt: "Engenheiro de Software com 7+ anos de experiência criando soluções web robustas e de alta performance. Especializado em React, Angular, TypeScript e Java.",
+  en: "Software Engineer with 7+ years of experience building robust and high-performance web solutions. Specialized in React, Angular, TypeScript and Java."
 },
 years_exp: {
   pt: "Anos de Experiência",
