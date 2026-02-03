@@ -116,6 +116,10 @@ commitment: {
   pt: "Compromisso",
   en: "Commitment" 
 },
+clean_code: {
+  pt: "Código Limpo & Escalável",
+  en: "Clean & Scalable Code" 
+},
  workMode: {
     pt: 'Modalidade',
     en: 'Work Mode'

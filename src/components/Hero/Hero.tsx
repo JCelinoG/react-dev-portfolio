@@ -31,7 +31,7 @@ export const Hero: React.FC = () => {
   const getStats = () => [
   { value: '7+', label: t('years_exp') },
   { value: '💻', label: t('modern_tech') },
-  { value: '100%', label: t('commitment') }
+  { value: '⚙️', label: t('clean_code') }
 ]
 
 const cvFile =
