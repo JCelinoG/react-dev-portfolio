@@ -31,7 +31,7 @@ export const Education: React.FC = () => {
       institution: 'University of São Paulo (USP/Esalq)',
       period: '2024 - 2026',
       periodPt: '2024 - 2026',
-      status: 'in-progress',
+      status: 'completed',
       description: 'Advanced studies in software architecture, project management, and agile methodologies.',
       descriptionPt: 'Estudos avançados em arquitetura de software, gerenciamento de projetos e metodologias ágeis.',
       location: 'São Paulo, Brazil',
@@ -73,13 +73,13 @@ export const Education: React.FC = () => {
   const getStatusBadge = (status: EducationItem['status']) => {
   const statusConfig = {
     completed: {
-      label: '✅ Completed',
-      labelPt: '✅ Concluído',
+      label: 'Completed',
+      labelPt: 'Concluído',
       color: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
     },
     'in-progress': {
-      label: '🔄 In Progress',
-      labelPt: '🔄 Em andamento',
+      label: 'In Progress',
+      labelPt: 'Em andamento',
       color: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
     },
     planned: {
