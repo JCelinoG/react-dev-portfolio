@@ -140,7 +140,7 @@ const mockProjects: Project[] = [
   demoUrl: 'https://www.institutofelipeportela.com.br/',
   githubUrl: '',
   featured: true,
-  category: 'landing-page',
+  category: 'landing-page', 
   status: 'completed'
 },
 {
