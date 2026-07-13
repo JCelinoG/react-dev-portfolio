@@ -130,7 +130,84 @@ const mockProjects: Project[] = [
     category: 'juridico',
     status: 'completed'
   },
-  
+ {
+  id: '9',
+  title: 'Instituto Felipe Portela - Landing Page',
+  description: 'Institutional landing page developed for Instituto Felipe Portela, focused on conversion and service presentation.',
+  descriptionPt: 'Landing page institucional desenvolvida para o Instituto Felipe Portela, com foco em conversão e apresentação de serviços.',
+  technologies: ['NextJS', 'Framer Motion', 'CSS', 'JavaScript'],
+  imageUrl: '/assets/img/projects/dr-felipe.png',
+  demoUrl: 'https://www.institutofelipeportela.com.br/',
+  githubUrl: '',
+  featured: true,
+  category: 'landing-page',
+  status: 'completed'
+},
+{
+  id: '10',
+  title: 'Grupo Conexo - Landing Page de Serviços',
+  description: 'Professional landing page for Grupo Conexo, presenting their services and solutions in a clear and attractive way.',
+  descriptionPt: 'Landing page profissional para o Grupo Conexo, apresentando seus serviços e soluções de forma clara e atrativa.',
+  technologies: ['NextJS', 'Framer Motion', 'CSS', 'JavaScript'],
+  imageUrl: '/assets/img/projects/conexo.png',
+  demoUrl: 'https://lp.grupoconexo.com.br/servicos/',
+  githubUrl: '',
+  featured: true,
+  category: 'landing-page',
+  status: 'completed'
+},
+{
+  id: '11',
+  title: 'Elleva Clínica Odontológica - Landing Page',
+  description: 'Modern landing page for a dental clinic, with a clean design focused on user experience and conversion.',
+  descriptionPt: 'Landing page moderna para clínica odontológica, com design clean e foco em experiência do usuário e conversão.',
+  technologies: ['NextJS', 'Framer Motion', 'CSS', 'JavaScript'],
+  imageUrl: '/assets/img/projects/elleva.png',
+  demoUrl: 'https://www.ellevaclinicaodontologica.com.br/',
+  githubUrl: '',
+  featured: true,
+  category: 'landing-page',
+  status: 'completed'
+},
+{
+  id: '12',
+  title: 'Grupo BCC Construtora - Landing Page',
+  description: 'Institutional landing page for a construction company, highlighting projects, services, and market credibility.',
+  descriptionPt: 'Landing page institucional para construtora, destacando projetos, serviços e credibilidade no mercado.',
+  technologies: ['NextJS', 'Framer Motion', 'CSS', 'JavaScript'],
+  imageUrl: '/assets/img/projects/bc construtora.png',
+  demoUrl: 'https://www.grupobcconstrutora.com.br/',
+  githubUrl: '',
+  featured: true,
+  category: 'landing-page',
+  status: 'completed'
+},
+{
+  id: '13',
+  title: 'Linhares Construtora - Landing Page',
+  description: 'Corporate landing page for a construction company, with a modern design focused on presenting developments.',
+  descriptionPt: 'Landing page corporativa para construtora, com design moderno e foco em apresentação de empreendimentos.',
+  technologies: ['NextJS', 'Framer Motion', 'CSS', 'JavaScript', 'GSAP'],
+  imageUrl: '/assets/img/projects/linhares.png',
+  demoUrl: 'https://linharesconstrutora.com.br/',
+  githubUrl: '',
+  featured: true,
+  category: 'landing-page',
+  status: 'completed'
+},
+{
+  id: '14',
+  title: 'Dr. Evandro Mello - Landing Page',
+  description: 'Professional landing page for a Social Security Law professional, with a clean design focused on credibility and appointment scheduling.',
+  descriptionPt: 'Landing page profissional para profissional do Direito Previdenciário, com design clean e foco em credibilidade e agendamento de consultas.',
+  technologies: ['NextJS', 'Elementor', 'CSS', 'JavaScript', 'GSAP'],
+  imageUrl: '/assets/img/projects/dr-evandro.png',
+  demoUrl: 'https://drevandromello.com.br/',
+  githubUrl: '',
+  featured: true,
+  category: 'landing-page',
+  status: 'completed'
+  }
 ];
 
 const mockExperiences: Experience[] = [

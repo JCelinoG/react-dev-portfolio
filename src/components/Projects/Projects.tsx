@@ -17,6 +17,7 @@ export const Projects: React.FC = () => {
       gestao: 'from-orange-100 to-amber-100 dark:from-orange-900 dark:to-amber-900',
       ecommerce: 'from-cyan-100 to-sky-100 dark:from-cyan-900 dark:to-sky-900',
       portfolio: 'from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900',
+    'landing-page': 'from-indigo-100 to-violet-100 dark:from-indigo-900 dark:to-violet-900',
       default: 'from-primary-100 to-secondary-100 dark:from-primary-900 dark:to-secondary-900'
     };
     
@@ -99,7 +100,8 @@ export const Projects: React.FC = () => {
                           {project.category === 'agronegocio' && '🌱'}
                           {project.category === 'saude' && '🏥'}
                           {project.category === 'ecommerce' && '🛒'}
-                          {project.category === 'portfolio' && '⚡'}
+                          {project.category === 'portfolio' && '⚡'},
+                          {project.category === 'landing-page' && '📄'}
                           {!project.category && '💼'}
                         </div>
                         <p className="text-sm text-secondary-600 dark:text-secondary-400 font-medium">
@@ -107,7 +109,8 @@ export const Projects: React.FC = () => {
                           {project.category === 'agronegocio' && 'Sistema Agrícola'}
                           {project.category === 'saude' && 'Sistema de Saúde'}
                           {project.category === 'ecommerce' && 'E-commerce'}
-                          {project.category === 'portfolio' && 'Portfolio'}
+                          {project.category === 'portfolio' && 'Portfolio'},
+                          {project.category === 'landing-page' && 'Landing Page'}
                           {!project.category && 'Projeto'}
                         </p>
                       </div>
