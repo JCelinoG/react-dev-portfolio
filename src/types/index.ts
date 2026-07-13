@@ -23,7 +23,7 @@ export interface Experience {
   descriptionPt: string;
   technologies: string[];
   current?: boolean;
-  type: 'full-time' | 'part-time' | 'freelance' | 'internship' | 'education';
+  type: 'full-time' | 'part-time' | 'freelance' | 'internship' | 'education'| 'startup';
   workMode: 'remote' | 'on-site' | 'hybrid';
 }
 
