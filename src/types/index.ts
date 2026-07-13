@@ -29,7 +29,7 @@ export interface Experience {
 
 export interface Skill {
   name: string;
-  category: 'frontend' | 'backend' | 'mobile' | 'tools' | 'soft' | 'design';
+  category: 'frontend' | 'backend' | 'mobile' | 'tools' | 'soft' | 'design'| 'cloud';
   level?: number;
   icon?: string;
   years?: number;
