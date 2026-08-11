@@ -317,6 +317,7 @@ export const Contact: React.FC = () => {
           </motion.div>
         </div>
       </div>
+    
     </section>
   );
 };
