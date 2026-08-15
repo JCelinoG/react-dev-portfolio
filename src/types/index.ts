@@ -6,9 +6,9 @@ export interface Project {
   technologies: string[];
   imageUrl: string;
   demoUrl?: string;
-  githubUrl: string;
+  githubUrl?: string;
   featured: boolean;
-  category: 'juridico' | 'agronegocio' | 'saude' | 'gestao' | 'ecommerce' | 'portfolio' | 'landing-page';
+  category: 'juridico' | 'agronegocio' | 'saude' | 'gestao' | 'ecommerce' | 'portfolio' | 'landing-page' | 'frontend' | 'fullstack';
   status: 'completed' | 'in-progress' | 'planned';
 }
 

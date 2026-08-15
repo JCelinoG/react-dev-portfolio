@@ -1,4 +1,5 @@
 import React, { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AppProvider } from './contexts/AppProvider';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
@@ -12,6 +13,7 @@ const Projects = lazy(() => import('./components/Projects/Projects').then(module
 const Skills = lazy(() => import('./components/Skills/Skills').then(module => ({ default: module.Skills })));
 const Education = lazy(() => import('./components/Education/Education').then(module => ({ default: module.Education })));
 const Contact = lazy(() => import('./components/Contact/Contact').then(module => ({ default: module.Contact })));
+const LandingPages = lazy(() => import('./pages/LandingPages').then(module => ({ default: module.LandingPages })));
 
 const SimpleSEO: React.FC = () => {
   React.useEffect(() => {
@@ -31,24 +33,35 @@ const SimpleSEO: React.FC = () => {
 
 function App() {
   return (
-    <AppProvider>
-      <div className="min-h-screen bg-white dark:bg-secondary-900 transition-colors">
-        <SimpleSEO />
-        <Header />
-        <main>
-          <Suspense fallback={<Loading />}>
-            <Hero />
-            <Experience />
-            <Projects />
-            <Skills />
-            <Education />
-            <Contact />
-          </Suspense>
-        </main>
-        <Footer />
-        <ScrollToTop />
-      </div>
-    </AppProvider>
+    <Router>
+      <AppProvider>
+        <div className="min-h-screen bg-white dark:bg-secondary-900 transition-colors">
+          <SimpleSEO />
+          <Header />
+          <main>
+            <Suspense fallback={<Loading />}>
+              <Routes>
+                {/* Página Principal */}
+                <Route path="/" element={
+                  <>
+                    <Hero />
+                    <Experience />
+                    <Projects />
+                    <Skills />
+                    <Education />
+                    <Contact />
+                  </>
+                } />
+                {/* Página de Landing Pages */}
+                <Route path="/landing-pages" element={<LandingPages />} />
+              </Routes>
+            </Suspense>
+          </main>
+          <Footer />
+          <ScrollToTop />
+        </div>
+      </AppProvider>
+    </Router>
   );
 }
 
