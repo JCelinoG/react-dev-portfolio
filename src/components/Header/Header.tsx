@@ -2,11 +2,27 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useApp } from '../../contexts/AppContext';
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import { useLocation, Link } from 'react-router-dom';
 
 export const Header: React.FC = () => {
   const { language, setLanguage, t } = useApp();
+  const location = useLocation();
+  const isLandingPage = location.pathname === '/landing-pages';
 
   const navItems = ['about', 'experience', 'projects', 'contact'];
+
+  const handleNavigation = (sectionId: string) => {
+    if (isLandingPage) {
+      // Se estiver na página de landing pages, volta para home e vai para seção
+      window.location.href = `/#${sectionId}`;
+    } else {
+      // Scroll suave na mesma página
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <motion.header
@@ -16,27 +32,21 @@ export const Header: React.FC = () => {
     >
       <div className="container-custom">
         <div className="flex items-center justify-between py-4">
-          {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-2 cursor-pointer"
-            onClick={() => window.location.reload()}
-          >
-     <div className="w-10 h-8 bg-gradient-to-r from-primary-600 to-primary-400 rounded-lg flex items-center justify-center">
-          <span className="text-white font-bold text-sm">DEV</span>
-        </div>
-        <span className="text-xl font-bold text-secondary-900">João Celino</span>
-          </motion.div>
+          {/* Logo - Volta para home */}
+          <Link to="/" className="flex items-center space-x-2">
+            <div className="w-10 h-8 bg-gradient-to-r from-primary-600 to-primary-400 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">DEV</span>
+            </div>
+            <span className="text-xl font-bold text-secondary-900">João Celino</span>
+          </Link>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <motion.a
+              <button
                 key={item}
-                href={`#${item}`}
+                onClick={() => handleNavigation(item)}
                 className="text-secondary-700 hover:text-primary-600 font-medium transition-colors relative"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
               >
                 {t(item)}
                 <motion.div
@@ -44,7 +54,7 @@ export const Header: React.FC = () => {
                   whileHover={{ width: '100%' }}
                   transition={{ duration: 0.2 }}
                 />
-              </motion.a>
+              </button>
             ))}
           </nav>
 

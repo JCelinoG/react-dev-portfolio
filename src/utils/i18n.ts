@@ -215,6 +215,14 @@ clean_code: {
    'technologies':{
     pt:'Tecnologias Utilizadas',
     en:'Technologies Used'
+  },
+   viewAllLandingPages: {
+    pt: 'Ver todas as Landing Pages',
+    en: 'View all Landing Pages'
+  },
+  landingPages: {
+    pt: 'Landing Pages',
+    en: 'Landing Pages'
   }
 };
 

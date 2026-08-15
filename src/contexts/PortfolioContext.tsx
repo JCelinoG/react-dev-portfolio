@@ -56,8 +56,8 @@ const mockProjects: Project[] = [
       'Internationalization'
     ],
     imageUrl: '/assets/img/projects/react-portfolio.PNG',
-    demoUrl: '', 
-    githubUrl: 'https://github.com/JCelinoG/react-dev-portfolio',
+    demoUrl: 'https://joaocelino.dev/', 
+    githubUrl: '',
     featured: true,
     category: 'portfolio',
     status: 'completed'
@@ -72,7 +72,7 @@ const mockProjects: Project[] = [
   demoUrl: 'https://dranataliabeltrami.com.br/',
   githubUrl: '', 
   featured: true,
-  category: 'saude',
+  category: 'landing-page',
   status: 'completed'
 },
   {
@@ -207,7 +207,20 @@ const mockProjects: Project[] = [
   featured: true,
   category: 'landing-page',
   status: 'completed'
-  }
+  },
+ {
+  id: '15',
+  title: 'Psi Yuri Vitorino - Psicologia Clínica',
+description: 'Professional landing page for a clinical psychologist specialized in Cognitive-Behavioral Therapy (CBT), offering both online and in-person sessions.',
+descriptionPt: 'Landing page profissional para psicólogo clínico especializado em Terapia Cognitivo-Comportamental (TCC), com atendimento online e presencial.',
+  technologies: ['HTML5', 'CSS3', 'JavaScript', 'SEO', 'Responsive Design'],
+  imageUrl: '/assets/img/projects/yuri.png',
+  demoUrl: 'https://psiyurivitorino.com.br/',
+  githubUrl: '',
+  featured: true,
+  category: 'landing-page',
+  status: 'completed'
+}
 ];
 
 const mockExperiences: Experience[] = [
