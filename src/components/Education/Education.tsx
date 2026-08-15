@@ -31,7 +31,7 @@ export const Education: React.FC = () => {
       institution: 'University of São Paulo (USP/Esalq)',
       period: '2024 - 2026',
       periodPt: '2024 - 2026',
-      status: 'in-progress',
+      status: 'completed',
       description: 'Advanced studies in software architecture, project management, and agile methodologies.',
       descriptionPt: 'Estudos avançados em arquitetura de software, gerenciamento de projetos e metodologias ágeis.',
       location: 'São Paulo, Brazil',
